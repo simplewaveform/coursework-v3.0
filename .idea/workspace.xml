@@ -20,11 +20,18 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="266ab225-36eb-4c94-9a30-a0702de15409" name="Changes" comment="" />
+    <list default="true" id="266ab225-36eb-4c94-9a30-a0702de15409" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Inc/lowpassLC.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/lowpassLC.h" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" show_ignored="true">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
   </component>
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
@@ -125,7 +132,7 @@
       <workItem from="1728985979695" duration="802000" />
       <workItem from="1729059504356" duration="3469000" />
       <workItem from="1729153220930" duration="859000" />
-      <workItem from="1729154299148" duration="2150000" />
+      <workItem from="1729154299148" duration="2406000" />
     </task>
     <servers />
   </component>
