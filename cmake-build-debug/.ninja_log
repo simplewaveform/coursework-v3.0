@@ -1,0 +1,13 @@
+# ninja log v5
+7	23	1727254110787838513	SimpleWxApp.app/Contents/Resources/tabbase.h	55dcc47dcd14f66
+1563	1804	1729154467396268718	SimpleWxApp.app/Contents/MacOS/SimpleWxApp	e7f8156712c496ea
+0	336	1729181608909174616	build.ninja	9197aaeaef5b43a5
+0	9	0	clean	3c8e6cc385ee00ba
+20	1503	1729154467093054127	CMakeFiles/SimpleWxApp.dir/Src/calculations.cpp.o	883b5ca1a2d7887c
+21	1549	1729154467138424175	CMakeFiles/SimpleWxApp.dir/Src/tabLM317.cpp.o	8c3854da0bdda9ad
+1462	1715	1725606246403331535	SimpleWxApp	de55a98852f3eccb
+20	1562	1729154467151383338	CMakeFiles/SimpleWxApp.dir/Src/tabfilter.cpp.o	6a5690b56ee11f2d
+8	20	1729154465616822843	SimpleWxApp.app/Contents/Resources/myapp.icns	9de2f37b7a8b1898
+21	1554	1729154467144605578	CMakeFiles/SimpleWxApp.dir/Src/tabTL431.cpp.o	2ea5fb152e9c0245
+22	1563	1729154467152357809	CMakeFiles/SimpleWxApp.dir/Src/tabdivider.cpp.o	7c061c727c54296f
+20	1532	1729154467123149164	CMakeFiles/SimpleWxApp.dir/Src/main.cpp.o	86460d27c9232b44
