@@ -1,5 +1,5 @@
-#ifndef SIMPLEWXAPP_MAIN_H
-#define SIMPLEWXAPP_MAIN_H
+#ifndef CIRCUITWAVE_MAIN_H
+#define CIRCUITWAVE_MAIN_H
 
 class MyApp : public wxApp {
 public:
@@ -14,4 +14,4 @@ private:
     wxNotebook* notebook;
 };
 
-#endif //SIMPLEWXAPP_MAIN_H
+#endif //CIRCUITWAVE_MAIN_H

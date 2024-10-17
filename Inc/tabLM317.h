@@ -1,4 +1,4 @@
-#ifndef TABTLM317_H
+#ifndef TABLM317_H
 #define TABLM317_H
 
 #include <wx/wx.h>

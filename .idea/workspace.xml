@@ -11,7 +11,7 @@
   </component>
   <component name="CMakeRunConfigurationManager">
     <generated>
-      <config projectName="SimpleWxApp" targetName="SimpleWxApp" />
+      <config projectName="CircuitWave" targetName="CircuitWave" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -20,8 +20,32 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="266ab225-36eb-4c94-9a30-a0702de15409" name="Changes" comment="">
+    <list default="true" id="266ab225-36eb-4c94-9a30-a0702de15409" name="Changes" comment="lc class added">
+      <change afterPath="$PROJECT_DIR$/Inc/imageProcessor.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Src/imageProcessor.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Src/lowpassRC.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/calculations.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/calculations.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/circuitComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/circuitComponent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/filter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/filter.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Inc/lowpassLC.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/lowpassLC.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/lowpassRC.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/lowpassRC.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/main.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/main.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/tabLM317.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/tabLM317.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/calculations.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Src/calculations.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/tabfilter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Src/tabfilter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cache-v2-c4cb1504046d1ea207c8.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-c420758729887e2781cd.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2024-10-17T16-13-28-0928.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-SimpleWxApp-Debug-157a0ae17dcf6073b34b.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,16 +77,20 @@
   &quot;associatedIndex&quot;: 7
 }</component>
   <component name="ProjectId" id="2lgeWyfJCGdJAAvLhJSGWya9niU" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
@@ -80,11 +108,12 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Src" />
       <recent name="$PROJECT_DIR$/Inc" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="SimpleWxApp" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="SimpleWxApp" TARGET_NAME="SimpleWxApp" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="SimpleWxApp" RUN_TARGET_NAME="SimpleWxApp">
+    <configuration name="CircuitWave" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CircuitWave" TARGET_NAME="CircuitWave" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CircuitWave" RUN_TARGET_NAME="CircuitWave">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -132,8 +161,17 @@
       <workItem from="1728985979695" duration="802000" />
       <workItem from="1729059504356" duration="3469000" />
       <workItem from="1729153220930" duration="859000" />
-      <workItem from="1729154299148" duration="2406000" />
+      <workItem from="1729154299148" duration="6950000" />
     </task>
+    <task id="LOCAL-00001" summary="lc class added">
+      <option name="closed" value="true" />
+      <created>1729182078402</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1729182078402</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,5 +193,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="lc class added" />
+    <option name="LAST_COMMIT_MESSAGE" value="lc class added" />
   </component>
 </project>

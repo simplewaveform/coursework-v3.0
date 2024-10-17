@@ -1,9 +1,12 @@
 cmake_minimum_required(VERSION 3.10)
-project(SimpleWxApp)
+project(CircuitWave)
+
+set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Enable app bundle creation on macOS
 set(MACOSX_BUNDLE TRUE)
-set(MACOSX_BUNDLE_BUNDLE_NAME "SimpleWxApp")
+set(MACOSX_BUNDLE_BUNDLE_NAME "CircuitWave")
 
 # Specify the icon file
 set(MACOSX_BUNDLE_ICON_FILE myapp.icns)
@@ -18,7 +21,7 @@ find_package(wxWidgets REQUIRED COMPONENTS core base)
 include(${wxWidgets_USE_FILE})
 
 # Add the source files, and specify it as a macOS bundle
-add_executable(SimpleWxApp MACOSX_BUNDLE Src/main.cpp
+add_executable(CircuitWave MACOSX_BUNDLE Src/main.cpp
         Src/calculations.cpp
         Inc/calculations.h
         Src/tabfilter.cpp
@@ -34,7 +37,10 @@ add_executable(SimpleWxApp MACOSX_BUNDLE Src/main.cpp
         Inc/circuitComponent.h
         Inc/filter.h
         Inc/lowpassRC.h
-        Inc/lowpassLC.h)
+        Inc/lowpassLC.h
+        Src/lowpassRC.cpp
+        Src/imageProcessor.cpp
+        Inc/imageProcessor.h)
 
 # Link wxWidgets libraries
-target_link_libraries(SimpleWxApp ${wxWidgets_LIBRARIES})
+target_link_libraries(CircuitWave ${wxWidgets_LIBRARIES})

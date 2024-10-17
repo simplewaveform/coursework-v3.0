@@ -1,5 +1,5 @@
-#ifndef SIMPLEWXAPP_LOWPASSLC_H
-#define SIMPLEWXAPP_LOWPASSLC_H
+#ifndef CIRCUITWAVE_LOWPASSLC_H
+#define CIRCUITWAVE_LOWPASSLC_H
 #include "../Inc/filter.h"
 
 class lowpassLC : public filter {
@@ -9,4 +9,4 @@ private:
 
 };
 
-#endif //SIMPLEWXAPP_LOWPASSLC_H
+#endif //CIRCUITWAVE_LOWPASSLC_H
