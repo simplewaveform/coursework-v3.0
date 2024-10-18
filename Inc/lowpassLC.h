@@ -1,11 +1,14 @@
 #ifndef CIRCUITWAVE_LOWPASSLC_H
 #define CIRCUITWAVE_LOWPASSLC_H
+
 #include "../Inc/filter.h"
 
 class lowpassLC : public filter {
 
-private:
-    void calculateParameters() override {};
+public:
+    double L, C, frequency, time;
+    lowpassLC(double R, double C);
+    void calculateParameters() override;
 
 };
 

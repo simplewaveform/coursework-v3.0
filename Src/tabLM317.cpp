@@ -1,5 +1,5 @@
 #include "../Inc/tabLM317.h"
-#include "../Inc/calculations.h"
+#include "../Inc/imageProcessor.h"
 
 tabLM317::tabLM317(wxNotebook* parent) : wxPanel(parent, wxID_ANY) {
 
@@ -51,6 +51,6 @@ void tabLM317::OnCalculate(wxCommandEvent&) {
         return;
     }
 
-    resultVoltage->SetLabel(wxString::Format("Output voltage: %.2f V", lm317(R1, R2)));
+    //resultVoltage->SetLabel(wxString::Format("Output voltage: %.2f V", LM317(R1, R2)));
 
 }

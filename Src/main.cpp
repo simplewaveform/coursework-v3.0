@@ -1,5 +1,6 @@
 #include <wx/menu.h>
-#include "../Inc/tabfilter.h"
+#include "../Inc/tabRCfilter.h"
+#include "../Inc/tabLCfilter.h"
 #include "../Inc/tabTL431.h"
 #include "../Inc/tabLM317.h"
 #include "../Inc/tabdivider.h"
@@ -27,17 +28,20 @@ MyFrame::MyFrame(const wxString& title) : wxFrame(nullptr, wxID_ANY, title, wxDe
     notebook = new wxNotebook(this, wxID_ANY);
     notebook->SetBackgroundColour(*wxBLACK);
 
-    auto* tab1 = new tabfilter(notebook);
-    notebook->AddPage(tab1, "RC фильтр");
+    auto* tab1 = new tabRCfilter(notebook);
+    notebook->AddPage(tab1, "lowpass RC filter");
 
-    auto* tab2 = new tabTL431(notebook);
-    notebook->AddPage(tab2, "TL431");
+    auto* tab2 = new tabLCfilter(notebook);
+    notebook->AddPage(tab2, "lowpass LC filter");
 
-    auto* tab3 = new tabLM317(notebook);
-    notebook->AddPage(tab3, "LM317");
+    auto* tab3 = new tabTL431(notebook);
+    notebook->AddPage(tab3, "TL431");
 
-    auto* tab4 = new tabdivider(notebook);
-    notebook->AddPage(tab4, "Voltage divider");
+    auto* tab4 = new tabLM317(notebook);
+    notebook->AddPage(tab4, "LM317");
+
+    auto* tab5 = new tabdivider(notebook);
+    notebook->AddPage(tab5, "Voltage divider");
 
 }
 

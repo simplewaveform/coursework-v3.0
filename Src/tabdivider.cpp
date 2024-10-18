@@ -1,5 +1,5 @@
 #include "../Inc/tabdivider.h"
-#include "../Inc/calculations.h"
+#include "../Inc/imageProcessor.h"
 
 tabdivider::tabdivider(wxNotebook* parent) : wxPanel(parent, wxID_ANY) {
 
@@ -49,6 +49,6 @@ void tabdivider::OnCalculate(wxCommandEvent&) {
         return;
     }
 
-    resultVoltage->SetLabel(wxString::Format("Output voltage: %.2f V", divider(R1, R2, 0)));
+    //resultVoltage->SetLabel(wxString::Format("Output voltage: %.2f V", divider(R1, R2, 0)));
 
 }

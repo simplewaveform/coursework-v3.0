@@ -1,13 +1,13 @@
-#ifndef TABFILTER_H
-#define TABFILTER_H
+#ifndef TABRCFILTER_H
+#define TABRCFILTER_H
 
 #include <wx/wx.h>
 #include <wx/notebook.h>
 
-class tabfilter : public wxPanel
+class tabRCfilter : public wxPanel
 {
 public:
-    explicit tabfilter(wxNotebook* parent);
+    explicit tabRCfilter(wxNotebook* parent);
     void OnCalculate(wxCommandEvent& event);
 
 private:

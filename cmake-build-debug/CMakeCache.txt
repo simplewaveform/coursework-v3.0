@@ -219,15 +219,6 @@ CircuitWave_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 CircuitWave_SOURCE_DIR:STATIC=/Users/simple_waveform/Documents/programming/3/coursework v3.0
 
-//Value Computed by CMake
-SimpleWxApp_BINARY_DIR:STATIC=/Users/simple_waveform/Documents/programming/3/coursework v3.0/cmake-build-debug
-
-//Value Computed by CMake
-SimpleWxApp_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-SimpleWxApp_SOURCE_DIR:STATIC=/Users/simple_waveform/Documents/programming/3/coursework v3.0
-
 //Location of wxWidgets library configuration provider binary (wx-config).
 wxWidgets_CONFIG_EXECUTABLE:FILEPATH=/opt/homebrew/bin/wx-config
 

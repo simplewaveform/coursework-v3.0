@@ -1,5 +1,5 @@
 #include "../Inc/tabTL431.h"
-#include "../Inc/calculations.h"
+#include "../Inc/imageProcessor.h"
 
 tabTL431::tabTL431(wxNotebook* parent) : wxPanel(parent, wxID_ANY) {
 
@@ -51,6 +51,6 @@ void tabTL431::OnCalculate(wxCommandEvent&) {
         return;
     }
 
-    resultVoltage->SetLabel(wxString::Format("Output voltage: %.2f V", tl431(R1, R2)));
+    //resultVoltage->SetLabel(wxString::Format("Output voltage: %.2f V", tl431(R1, R2)));
 
 }
