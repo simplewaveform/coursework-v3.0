@@ -6,7 +6,7 @@ wxBitmap ProcessImage(const wxString& filePath, int width, int height, bool inve
 
     if (!image.IsOk()) {
         wxMessageBox("Failed to load image", "Error", wxOK | wxICON_ERROR);
-        return {};
+        return image;
     }
 
     if (width > 0 && height > 0) {
@@ -21,5 +21,5 @@ wxBitmap ProcessImage(const wxString& filePath, int width, int height, bool inve
         }
     }
 
-    return {image};
+    return image;
 }

@@ -3,8 +3,9 @@
 #include "../Inc/circuitComponent.h"
 
 class filter : public circuitComponent {
-protected:
-    void calculateParameters() override = 0;
+
+public:
+    double C{}, frequency{}, time{};
 
 };
 

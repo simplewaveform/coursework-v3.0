@@ -29,10 +29,10 @@ MyFrame::MyFrame(const wxString& title) : wxFrame(nullptr, wxID_ANY, title, wxDe
     notebook->SetBackgroundColour(*wxBLACK);
 
     auto* tab1 = new tabRCfilter(notebook);
-    notebook->AddPage(tab1, "lowpass RC filter");
+    notebook->AddPage(tab1, "НЧ фильтр (RC)");
 
     auto* tab2 = new tabLCfilter(notebook);
-    notebook->AddPage(tab2, "lowpass LC filter");
+    notebook->AddPage(tab2, "НЧ фильтр (LC)");
 
     auto* tab3 = new tabTL431(notebook);
     notebook->AddPage(tab3, "TL431");
@@ -41,7 +41,7 @@ MyFrame::MyFrame(const wxString& title) : wxFrame(nullptr, wxID_ANY, title, wxDe
     notebook->AddPage(tab4, "LM317");
 
     auto* tab5 = new tabdivider(notebook);
-    notebook->AddPage(tab5, "Voltage divider");
+    notebook->AddPage(tab5, "Делитель напряжения");
 
 }
 

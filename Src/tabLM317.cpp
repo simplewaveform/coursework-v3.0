@@ -28,7 +28,7 @@ tabLM317::tabLM317(wxNotebook* parent) : wxPanel(parent, wxID_ANY) {
     gridSizer1->Add(resultVoltage, 0, wxALIGN_LEFT | wxTOP, 10);
 
 
-    wxBitmap processedBitmap = ProcessImage("/Users/simple_waveform/Documents/programming/3/coursework/Resources/LM317.png", 530, 330, true);
+    wxBitmap processedBitmap = ProcessImage("/Users/simple_waveform/Documents/programming/3/coursework v3.0/Resources/LM317.png", 530, 330, true);
     auto* imageCtrl = new wxStaticBitmap(this, wxID_ANY, processedBitmap);
     imageCtrl->Move(320, 0);
 

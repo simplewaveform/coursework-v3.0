@@ -6,8 +6,8 @@
 class lowpassRC : public filter {
 
 public:
-    double R, C, frequency, time;
-    lowpassRC(double R, double C);
+    explicit lowpassRC();
+    double R{};
     void calculateParameters() override;
 
 };

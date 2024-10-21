@@ -31,9 +31,7 @@ tabLCfilter::tabLCfilter(wxNotebook* parent) : wxPanel(parent, wxID_ANY) {
     gridSizer->Add(emptyCell2, 0, wxEXPAND);
     gridSizer->Add(resultTimeConstant, 0, wxALIGN_LEFT | wxTOP, 10);
 
-    auto* imageCtrl = new wxStaticBitmap(this, wxID_ANY, ProcessImage("/Users/"
-                                                                      "simple_waveform/Documents/programming/3"
-                                                                      "/coursework v3.0/Resources/filter.png",
+    auto* imageCtrl = new wxStaticBitmap(this, wxID_ANY, ProcessImage("../Resources/filter.png",
                                                                       530, 330, true));
     imageCtrl->Move(320, -20);
 
@@ -44,19 +42,10 @@ tabLCfilter::tabLCfilter(wxNotebook* parent) : wxPanel(parent, wxID_ANY) {
 
 void tabLCfilter::OnCalculate(wxCommandEvent&) {
 
-    lowpassLC filter(0, 0);
-
-    if (!inputL1->GetValue().ToDouble(&filter.L) || !inputC1->GetValue().ToDouble(&filter.C)) {
-        wxMessageBox("Please enter valid numeric values.", "Error", wxOK | wxICON_ERROR);
-        return;
-    }
-    if (filter.L <= 0 || filter.C <= 0) {
-        wxMessageBox("Values must be positive and non-zero.", "Error", wxOK | wxICON_ERROR);
-        return;
-    }
-
+    lowpassLC filter;
+    if (!(inputL1->GetValue().ToDouble(&filter.L) && inputC1->GetValue().ToDouble(&filter.C)
+        && circuitComponent::validateInput(&filter.L, &filter.C))) return;
     filter.calculateParameters();
-
     resultCutoff->SetLabel(wxString::Format("Cutoff Frequency: %.2f Hz", filter.frequency));
     resultTimeConstant->SetLabel(wxString::Format("Time Constant: %.2f us", filter.time));
 

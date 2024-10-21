@@ -21,84 +21,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="266ab225-36eb-4c94-9a30-a0702de15409" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Inc/tabLCfilter.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Src/lowpassLC.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Src/tabLCfilter.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/CMakeCache.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/CMakeFiles/3.26.4/CMakeCCompiler.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/CMakeFiles/3.26.4/CMakeCXXCompiler.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/CMakeFiles/3.26.4/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/CMakeFiles/3.26.4/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/CMakeFiles/3.26.4/CMakeSystem.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/CMakeFiles/3.26.4/CompilerIdC/CMakeCCompilerId.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/CMakeFiles/3.26.4/CompilerIdC/CMakeCCompilerId.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/CMakeFiles/3.26.4/CompilerIdCXX/CMakeCXXCompilerId.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/CMakeFiles/3.26.4/CompilerIdCXX/CMakeCXXCompilerId.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/CMakeFiles/CMakeConfigureLog.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/DependInfo.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/Src/calculations.cpp.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/Src/calculations.cpp.o.d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/Src/imageProcessor.cpp.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/Src/imageProcessor.cpp.o.d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/Src/lowpassLC.cpp.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/Src/lowpassLC.cpp.o.d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/Src/lowpassRC.cpp.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/Src/lowpassRC.cpp.o.d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/Src/main.cpp.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/Src/main.cpp.o.d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/Src/tabLCfilter.cpp.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/Src/tabLCfilter.cpp.o.d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/Src/tabLM317.cpp.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/Src/tabLM317.cpp.o.d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/Src/tabRCfilter.cpp.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/Src/tabRCfilter.cpp.o.d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/Src/tabTL431.cpp.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/Src/tabTL431.cpp.o.d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/Src/tabdivider.cpp.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/Src/tabdivider.cpp.o.d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/build.make" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/cmake_clean.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/compiler_depend.make" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/compiler_depend.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/depend.make" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/flags.make" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/link.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/progress.make" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/CMakeFiles/Makefile2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/CMakeFiles/cmake.check_cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/CMakeFiles/progress.marks" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/CircuitWave.app/Contents/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/CircuitWave.app/Contents/MacOS/CircuitWave" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/CircuitWave.app/Contents/Resources/myapp.icns" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/cmake_install.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Inc/TL431.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Inc/regulator.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Src/TL431.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Src/circuitComponent.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/circuitComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/circuitComponent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/filter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/filter.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Inc/lowpassLC.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/lowpassLC.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Inc/lowpassRC.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/lowpassRC.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Inc/tabfilter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/tabRCfilter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/main.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/main.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/tabRCfilter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/tabRCfilter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/tabTL431.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/tabTL431.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/calculations.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Src/calculations.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/imageProcessor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Src/imageProcessor.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/lowpassLC.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Src/lowpassLC.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Src/lowpassRC.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Src/lowpassRC.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Src/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/tabLCfilter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Src/tabLCfilter.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Src/tabLM317.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Src/tabLM317.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Src/tabTL431.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Src/tabTL431.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Src/tabdivider.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Src/tabdivider.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Src/tabfilter.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-6706d6d584169482abb4.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.26.4/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.26.4/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.26.4/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.26.4/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SimpleWxApp.dir/Src/calculations.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SimpleWxApp.dir/Src/main.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SimpleWxApp.dir/Src/tabLM317.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SimpleWxApp.dir/Src/tabTL431.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SimpleWxApp.dir/Src/tabdivider.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SimpleWxApp.dir/Src/tabfilter.cpp.o" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
@@ -226,7 +172,10 @@
       <workItem from="1729232680645" duration="15000" />
       <workItem from="1729232703587" duration="293000" />
       <workItem from="1729233017707" duration="26000" />
-      <workItem from="1729233077663" duration="19000" />
+      <workItem from="1729233077663" duration="3332000" />
+      <workItem from="1729261840267" duration="107000" />
+      <workItem from="1729490925560" duration="5558000" />
+      <workItem from="1729529740428" duration="429000" />
     </task>
     <task id="LOCAL-00001" summary="lc class added">
       <option name="closed" value="true" />
@@ -244,7 +193,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729186763757</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="fixed cmake load">
+      <option name="closed" value="true" />
+      <created>1729233174852</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1729233174852</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -271,6 +228,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="lc class added" />
     <MESSAGE value="structure optimized (rc only is ready)" />
-    <option name="LAST_COMMIT_MESSAGE" value="structure optimized (rc only is ready)" />
+    <MESSAGE value="fixed cmake load" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed cmake load" />
   </component>
 </project>

@@ -11,6 +11,7 @@ public:
     void OnCalculate(wxCommandEvent& event);
 
 private:
+
     wxTextCtrl* inputR1;
     wxTextCtrl* inputC1;
     wxStaticText* resultCutoff;

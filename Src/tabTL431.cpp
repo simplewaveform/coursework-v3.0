@@ -1,4 +1,5 @@
 #include "../Inc/tabTL431.h"
+#include "../Inc/TL431.h"
 #include "../Inc/imageProcessor.h"
 
 tabTL431::tabTL431(wxNotebook* parent) : wxPanel(parent, wxID_ANY) {
@@ -23,12 +24,12 @@ tabTL431::tabTL431(wxNotebook* parent) : wxPanel(parent, wxID_ANY) {
     calculateButton->Bind(wxEVT_BUTTON, &tabTL431::OnCalculate, this);
     gridSizer1->Add(calculateButton, 0, wxALIGN_CENTER_HORIZONTAL, 10);
 
-    resultVoltage = new wxStaticText(this, wxID_ANY, "Output voltage:");
+    outputVoltage = new wxStaticText(this, wxID_ANY, "Output voltage:");
     gridSizer1->Add(emptyCell1, 0, wxEXPAND);
-    gridSizer1->Add(resultVoltage, 0, wxALIGN_LEFT | wxTOP, 10);
+    gridSizer1->Add(outputVoltage, 0, wxALIGN_LEFT | wxTOP, 10);
 
 
-    wxBitmap processedBitmap = ProcessImage("/Users/simple_waveform/Documents/programming/3/coursework/Resources/tl431.png", 530, 330, true);
+    wxBitmap processedBitmap = ProcessImage("/Users/simple_waveform/Documents/programming/3/coursework v3.0/Resources/tl431.png", 530, 330, true);
     auto* imageCtrl = new wxStaticBitmap(this, wxID_ANY, processedBitmap);
     imageCtrl->Move(320, 0);
 
@@ -40,17 +41,19 @@ tabTL431::tabTL431(wxNotebook* parent) : wxPanel(parent, wxID_ANY) {
 
 void tabTL431::OnCalculate(wxCommandEvent&) {
 
-    double R1, R2;
+    TL431 regulator;
 
-    if (!inputR1->GetValue().ToDouble(&R1) || !inputR2->GetValue().ToDouble(&R2)) {
+    if (!inputR1->GetValue().ToDouble(&regulator.R1) || !inputR2->GetValue().ToDouble(&regulator.R2)) {
         wxMessageBox("Please enter valid numeric values.", "Error", wxOK | wxICON_ERROR);
         return;
     }
-    if (R1 <= 0 || R2 <= 0) {
+    if (regulator.R1 <= 0 || regulator.R2 <= 0) {
         wxMessageBox("Values must be positive and non-zero.", "Error", wxOK | wxICON_ERROR);
         return;
     }
 
-    //resultVoltage->SetLabel(wxString::Format("Output voltage: %.2f V", tl431(R1, R2)));
+    regulator.calculateParameters();
+    
+    outputVoltage->SetLabel(wxString::Format("Output voltage: %.2f V", regulator.outputVoltage));
 
 }

@@ -43,7 +43,11 @@ add_executable(CircuitWave MACOSX_BUNDLE
         Inc/imageProcessor.h
         Src/lowpassLC.cpp
         Src/tabLCfilter.cpp
-        Inc/tabLCfilter.h)
+        Inc/tabLCfilter.h
+        Src/TL431.cpp
+        Inc/TL431.h
+        Inc/regulator.h
+        Src/circuitComponent.cpp)
 
 # Include wxWidgets directories
 include_directories(${wxWidgets_INCLUDE_DIRS})

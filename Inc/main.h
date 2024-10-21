@@ -3,7 +3,7 @@
 
 class MyApp : public wxApp {
 public:
-    virtual bool OnInit();
+    bool OnInit() override;
 };
 
 class MyFrame : public wxFrame {
