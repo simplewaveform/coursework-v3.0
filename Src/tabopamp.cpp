@@ -1,34 +1,35 @@
-#include "../Inc/tabdivider.h"
+#include "../Inc/tabopamp.h"
 #include "../Inc/imageProcessor.h"
 
-tabdivider::tabdivider(wxNotebook* parent) : wxPanel(parent, wxID_ANY) {
+tabopamp::tabopamp(wxNotebook *parent) : wxPanel(parent, wxID_ANY) {
 
-    auto* sizer1 = new wxBoxSizer(wxVERTICAL);
-    auto* gridSizer1 = new wxFlexGridSizer(8, 2, 20, 50);
+    auto *sizer1 = new wxBoxSizer(wxVERTICAL);
+    auto *gridSizer1 = new wxFlexGridSizer(8, 2, 20, 50);
     SetBackgroundColour(*wxBLACK);
 
-    auto* labelR1 = new wxStaticText(this, wxID_ANY, "R1 (Ω):");
+    auto *labelR1 = new wxStaticText(this, wxID_ANY, "R1 (Ω):");
     inputR1 = new wxTextCtrl(this, wxID_ANY);
-    auto* labelR2 = new wxStaticText(this, wxID_ANY, "R2 (Ω):");
+    auto *labelR2 = new wxStaticText(this, wxID_ANY, "R2 (Ω):");
     inputR2 = new wxTextCtrl(this, wxID_ANY);
 
-    auto* emptyCell1 = new wxStaticText(this, wxID_ANY, "");
+    auto *emptyCell1 = new wxStaticText(this, wxID_ANY, "");
 
     gridSizer1->Add(labelR1, 0, wxALIGN_CENTER_VERTICAL);
     gridSizer1->Add(inputR1, 0, wxEXPAND);
     gridSizer1->Add(labelR2, 0, wxALIGN_CENTER_VERTICAL);
     gridSizer1->Add(inputR2, 0, wxEXPAND);
 
-    auto* calculateButton = new wxButton(this, wxID_ANY, "Calculate Parameters");
-    calculateButton->Bind(wxEVT_BUTTON, &tabdivider::OnCalculate, this);
+    auto *calculateButton = new wxButton(this, wxID_ANY, "Calculate Parameters");
+    calculateButton->Bind(wxEVT_BUTTON, &tabopamp::OnCalculate, this);
     gridSizer1->Add(calculateButton, 0, wxALIGN_CENTER_HORIZONTAL, 10);
 
-    resultVoltage = new wxStaticText(this, wxID_ANY, "Output voltage:");
+    resultVoltage = new wxStaticText(this, wxID_ANY, "Output gain:");
     gridSizer1->Add(emptyCell1, 0, wxEXPAND);
     gridSizer1->Add(resultVoltage, 0, wxALIGN_LEFT | wxTOP, 10);
 
-    wxBitmap processedBitmap = ProcessImage("/Users/simple_waveform/Documents/programming/3/coursework v3.0/Resources/divider.png", 530, 330, true);
-    auto* imageCtrl = new wxStaticBitmap(this, wxID_ANY, processedBitmap);
+    wxBitmap processedBitmap = ProcessImage(
+            "/Users/simple_waveform/Documents/programming/3/coursework v3.0/Resources/divider.png", 530, 330, true);
+    auto *imageCtrl = new wxStaticBitmap(this, wxID_ANY, processedBitmap);
     imageCtrl->Move(320, -20);
 
     sizer1->Add(gridSizer1, 1, wxALL | wxEXPAND, 10);
@@ -36,7 +37,7 @@ tabdivider::tabdivider(wxNotebook* parent) : wxPanel(parent, wxID_ANY) {
 
 }
 
-void tabdivider::OnCalculate(wxCommandEvent&) {
+void tabopamp::OnCalculate(wxCommandEvent &) {
 
     double R1, R2;
 
@@ -49,6 +50,6 @@ void tabdivider::OnCalculate(wxCommandEvent&) {
         return;
     }
 
-    //resultVoltage->SetLabel(wxString::Format("Output voltage: %.2f V", divider(R1, R2, 0)));
+    //resultVoltage->SetLabel(wxString::Format("Output voltage: %.2f V", opamp(R1, R2, 0)));
 
 }

@@ -1,13 +1,13 @@
-#ifndef TABDIVIDER_H
-#define TABDIVIDER_H
+#ifndef TABOPAMP_H
+#define TABOPAMP_H
 
 #include <wx/wx.h>
 #include <wx/notebook.h>
 
-class tabdivider : public wxPanel
+class tabopamp : public wxPanel
 {
 public:
-    explicit tabdivider(wxNotebook* parent);
+    explicit tabopamp(wxNotebook* parent);
     void OnCalculate(wxCommandEvent& event);
 
 private:

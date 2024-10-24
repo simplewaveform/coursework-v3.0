@@ -1,4 +1,5 @@
 #include "../Inc/tabLM317.h"
+#include "../Inc/LM317.h"
 #include "../Inc/imageProcessor.h"
 
 tabLM317::tabLM317(wxNotebook* parent) : wxPanel(parent, wxID_ANY) {
@@ -23,9 +24,9 @@ tabLM317::tabLM317(wxNotebook* parent) : wxPanel(parent, wxID_ANY) {
     calculateButton->Bind(wxEVT_BUTTON, &tabLM317::OnCalculate, this);
     gridSizer1->Add(calculateButton, 0, wxALIGN_CENTER_HORIZONTAL, 10);
 
-    resultVoltage = new wxStaticText(this, wxID_ANY, "Output voltage:");
+    outputVoltage = new wxStaticText(this, wxID_ANY, "Output voltage:");
     gridSizer1->Add(emptyCell1, 0, wxEXPAND);
-    gridSizer1->Add(resultVoltage, 0, wxALIGN_LEFT | wxTOP, 10);
+    gridSizer1->Add(outputVoltage, 0, wxALIGN_LEFT | wxTOP, 10);
 
 
     wxBitmap processedBitmap = ProcessImage("/Users/simple_waveform/Documents/programming/3/coursework v3.0/Resources/LM317.png", 530, 330, true);
@@ -40,17 +41,10 @@ tabLM317::tabLM317(wxNotebook* parent) : wxPanel(parent, wxID_ANY) {
 
 void tabLM317::OnCalculate(wxCommandEvent&) {
 
-    double R1, R2;
-
-    if (!inputR1->GetValue().ToDouble(&R1) || !inputR2->GetValue().ToDouble(&R2)) {
-        wxMessageBox("Please enter valid numeric values.", "Error", wxOK | wxICON_ERROR);
-        return;
-    }
-    if (R1 <= 0 || R2 <= 0) {
-        wxMessageBox("Values must be positive and non-zero.", "Error", wxOK | wxICON_ERROR);
-        return;
-    }
-
-    //resultVoltage->SetLabel(wxString::Format("Output voltage: %.2f V", LM317(R1, R2)));
+    LM317 regulator;
+    if (!(inputR1->GetValue().ToDouble(&regulator.R1) && inputR1->GetValue().ToDouble(&regulator.R2)
+          && circuitComponent::validateInput(&regulator.R1, &regulator.R2))) return;
+    regulator.calculateParameters();
+    outputVoltage->SetLabel(wxString::Format("Output voltage: %.2f V", regulator.outputVoltage));
 
 }

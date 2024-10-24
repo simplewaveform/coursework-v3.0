@@ -345,29 +345,29 @@ Src/tabTL431.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CircuitWave.dir/build.make CMakeFiles/CircuitWave.dir/Src/tabTL431.cpp.s
 .PHONY : Src/tabTL431.cpp.s
 
-Src/tabdivider.o: Src/tabdivider.cpp.o
-.PHONY : Src/tabdivider.o
+Src/tabopamp.o: Src/tabopamp.cpp.o
+.PHONY : Src/tabopamp.o
 
 # target to build an object file
-Src/tabdivider.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CircuitWave.dir/build.make CMakeFiles/CircuitWave.dir/Src/tabdivider.cpp.o
-.PHONY : Src/tabdivider.cpp.o
+Src/tabopamp.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CircuitWave.dir/build.make CMakeFiles/CircuitWave.dir/Src/tabopamp.cpp.o
+.PHONY : Src/tabopamp.cpp.o
 
-Src/tabdivider.i: Src/tabdivider.cpp.i
-.PHONY : Src/tabdivider.i
+Src/tabopamp.i: Src/tabopamp.cpp.i
+.PHONY : Src/tabopamp.i
 
 # target to preprocess a source file
-Src/tabdivider.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CircuitWave.dir/build.make CMakeFiles/CircuitWave.dir/Src/tabdivider.cpp.i
-.PHONY : Src/tabdivider.cpp.i
+Src/tabopamp.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CircuitWave.dir/build.make CMakeFiles/CircuitWave.dir/Src/tabopamp.cpp.i
+.PHONY : Src/tabopamp.cpp.i
 
-Src/tabdivider.s: Src/tabdivider.cpp.s
-.PHONY : Src/tabdivider.s
+Src/tabopamp.s: Src/tabopamp.cpp.s
+.PHONY : Src/tabopamp.s
 
 # target to generate assembly for a file
-Src/tabdivider.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CircuitWave.dir/build.make CMakeFiles/CircuitWave.dir/Src/tabdivider.cpp.s
-.PHONY : Src/tabdivider.cpp.s
+Src/tabopamp.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CircuitWave.dir/build.make CMakeFiles/CircuitWave.dir/Src/tabopamp.cpp.s
+.PHONY : Src/tabopamp.cpp.s
 
 # Help Target
 help:
@@ -405,9 +405,9 @@ help:
 	@echo "... Src/tabTL431.o"
 	@echo "... Src/tabTL431.i"
 	@echo "... Src/tabTL431.s"
-	@echo "... Src/tabdivider.o"
-	@echo "... Src/tabdivider.i"
-	@echo "... Src/tabdivider.s"
+	@echo "... Src/tabopamp.o"
+	@echo "... Src/tabopamp.i"
+	@echo "... Src/tabopamp.s"
 .PHONY : help
 
 

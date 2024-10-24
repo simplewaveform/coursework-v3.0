@@ -17,7 +17,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/simple_waveform/Documents/programming/3/coursework v3.0/Src/tabLM317.cpp" "CMakeFiles/CircuitWave.dir/Src/tabLM317.cpp.o" "gcc" "CMakeFiles/CircuitWave.dir/Src/tabLM317.cpp.o.d"
   "/Users/simple_waveform/Documents/programming/3/coursework v3.0/Src/tabRCfilter.cpp" "CMakeFiles/CircuitWave.dir/Src/tabRCfilter.cpp.o" "gcc" "CMakeFiles/CircuitWave.dir/Src/tabRCfilter.cpp.o.d"
   "/Users/simple_waveform/Documents/programming/3/coursework v3.0/Src/tabTL431.cpp" "CMakeFiles/CircuitWave.dir/Src/tabTL431.cpp.o" "gcc" "CMakeFiles/CircuitWave.dir/Src/tabTL431.cpp.o.d"
-  "/Users/simple_waveform/Documents/programming/3/coursework v3.0/Src/tabdivider.cpp" "CMakeFiles/CircuitWave.dir/Src/tabdivider.cpp.o" "gcc" "CMakeFiles/CircuitWave.dir/Src/tabdivider.cpp.o.d"
+  "/Users/simple_waveform/Documents/programming/3/coursework v3.0/Src/tabopamp.cpp" "CMakeFiles/CircuitWave.dir/Src/tabopamp.cpp.o" "gcc" "CMakeFiles/CircuitWave.dir/Src/tabopamp.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

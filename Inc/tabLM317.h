@@ -13,7 +13,7 @@ public:
 private:
     wxTextCtrl* inputR1;
     wxTextCtrl* inputR2;
-    wxStaticText* resultVoltage;
+    wxStaticText* outputVoltage;
 };
 
 #endif

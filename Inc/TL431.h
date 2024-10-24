@@ -11,5 +11,4 @@ public:
 
 };
 
-
 #endif //CIRCUITWAVE_TL431_H

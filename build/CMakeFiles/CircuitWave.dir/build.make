@@ -143,19 +143,19 @@ CMakeFiles/CircuitWave.dir/Src/tabLM317.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CircuitWave.dir/Src/tabLM317.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/simple_waveform/Documents/programming/3/coursework v3.0/Src/tabLM317.cpp" -o CMakeFiles/CircuitWave.dir/Src/tabLM317.cpp.s
 
-CMakeFiles/CircuitWave.dir/Src/tabdivider.cpp.o: CMakeFiles/CircuitWave.dir/flags.make
-CMakeFiles/CircuitWave.dir/Src/tabdivider.cpp.o: /Users/simple_waveform/Documents/programming/3/coursework\ v3.0/Src/tabdivider.cpp
-CMakeFiles/CircuitWave.dir/Src/tabdivider.cpp.o: CMakeFiles/CircuitWave.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/simple_waveform/Documents/programming/3/coursework v3.0/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/CircuitWave.dir/Src/tabdivider.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CircuitWave.dir/Src/tabdivider.cpp.o -MF CMakeFiles/CircuitWave.dir/Src/tabdivider.cpp.o.d -o CMakeFiles/CircuitWave.dir/Src/tabdivider.cpp.o -c "/Users/simple_waveform/Documents/programming/3/coursework v3.0/Src/tabdivider.cpp"
+CMakeFiles/CircuitWave.dir/Src/tabopamp.cpp.o: CMakeFiles/CircuitWave.dir/flags.make
+CMakeFiles/CircuitWave.dir/Src/tabopamp.cpp.o: /Users/simple_waveform/Documents/programming/3/coursework\ v3.0/Src/tabopamp.cpp
+CMakeFiles/CircuitWave.dir/Src/tabopamp.cpp.o: CMakeFiles/CircuitWave.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/simple_waveform/Documents/programming/3/coursework v3.0/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/CircuitWave.dir/Src/tabopamp.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CircuitWave.dir/Src/tabopamp.cpp.o -MF CMakeFiles/CircuitWave.dir/Src/tabopamp.cpp.o.d -o CMakeFiles/CircuitWave.dir/Src/tabopamp.cpp.o -c "/Users/simple_waveform/Documents/programming/3/coursework v3.0/Src/tabopamp.cpp"
 
-CMakeFiles/CircuitWave.dir/Src/tabdivider.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CircuitWave.dir/Src/tabdivider.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/simple_waveform/Documents/programming/3/coursework v3.0/Src/tabdivider.cpp" > CMakeFiles/CircuitWave.dir/Src/tabdivider.cpp.i
+CMakeFiles/CircuitWave.dir/Src/tabopamp.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CircuitWave.dir/Src/tabopamp.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/simple_waveform/Documents/programming/3/coursework v3.0/Src/tabopamp.cpp" > CMakeFiles/CircuitWave.dir/Src/tabopamp.cpp.i
 
-CMakeFiles/CircuitWave.dir/Src/tabdivider.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CircuitWave.dir/Src/tabdivider.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/simple_waveform/Documents/programming/3/coursework v3.0/Src/tabdivider.cpp" -o CMakeFiles/CircuitWave.dir/Src/tabdivider.cpp.s
+CMakeFiles/CircuitWave.dir/Src/tabopamp.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CircuitWave.dir/Src/tabopamp.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/simple_waveform/Documents/programming/3/coursework v3.0/Src/tabopamp.cpp" -o CMakeFiles/CircuitWave.dir/Src/tabopamp.cpp.s
 
 CMakeFiles/CircuitWave.dir/Src/lowpassRC.cpp.o: CMakeFiles/CircuitWave.dir/flags.make
 CMakeFiles/CircuitWave.dir/Src/lowpassRC.cpp.o: /Users/simple_waveform/Documents/programming/3/coursework\ v3.0/Src/lowpassRC.cpp
@@ -220,7 +220,7 @@ CircuitWave_OBJECTS = \
 "CMakeFiles/CircuitWave.dir/Src/tabRCfilter.cpp.o" \
 "CMakeFiles/CircuitWave.dir/Src/tabTL431.cpp.o" \
 "CMakeFiles/CircuitWave.dir/Src/tabLM317.cpp.o" \
-"CMakeFiles/CircuitWave.dir/Src/tabdivider.cpp.o" \
+"CMakeFiles/CircuitWave.dir/Src/tabopamp.cpp.o" \
 "CMakeFiles/CircuitWave.dir/Src/lowpassRC.cpp.o" \
 "CMakeFiles/CircuitWave.dir/Src/imageProcessor.cpp.o" \
 "CMakeFiles/CircuitWave.dir/Src/lowpassLC.cpp.o" \
@@ -234,7 +234,7 @@ CircuitWave.app/Contents/MacOS/CircuitWave: CMakeFiles/CircuitWave.dir/Src/calcu
 CircuitWave.app/Contents/MacOS/CircuitWave: CMakeFiles/CircuitWave.dir/Src/tabRCfilter.cpp.o
 CircuitWave.app/Contents/MacOS/CircuitWave: CMakeFiles/CircuitWave.dir/Src/tabTL431.cpp.o
 CircuitWave.app/Contents/MacOS/CircuitWave: CMakeFiles/CircuitWave.dir/Src/tabLM317.cpp.o
-CircuitWave.app/Contents/MacOS/CircuitWave: CMakeFiles/CircuitWave.dir/Src/tabdivider.cpp.o
+CircuitWave.app/Contents/MacOS/CircuitWave: CMakeFiles/CircuitWave.dir/Src/tabopamp.cpp.o
 CircuitWave.app/Contents/MacOS/CircuitWave: CMakeFiles/CircuitWave.dir/Src/lowpassRC.cpp.o
 CircuitWave.app/Contents/MacOS/CircuitWave: CMakeFiles/CircuitWave.dir/Src/imageProcessor.cpp.o
 CircuitWave.app/Contents/MacOS/CircuitWave: CMakeFiles/CircuitWave.dir/Src/lowpassLC.cpp.o

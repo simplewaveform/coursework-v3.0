@@ -42,18 +42,9 @@ tabTL431::tabTL431(wxNotebook* parent) : wxPanel(parent, wxID_ANY) {
 void tabTL431::OnCalculate(wxCommandEvent&) {
 
     TL431 regulator;
-
-    if (!inputR1->GetValue().ToDouble(&regulator.R1) || !inputR2->GetValue().ToDouble(&regulator.R2)) {
-        wxMessageBox("Please enter valid numeric values.", "Error", wxOK | wxICON_ERROR);
-        return;
-    }
-    if (regulator.R1 <= 0 || regulator.R2 <= 0) {
-        wxMessageBox("Values must be positive and non-zero.", "Error", wxOK | wxICON_ERROR);
-        return;
-    }
-
+    if (!(inputR1->GetValue().ToDouble(&regulator.R1) && inputR1->GetValue().ToDouble(&regulator.R2)
+          && circuitComponent::validateInput(&regulator.R1, &regulator.R2))) return;
     regulator.calculateParameters();
-    
     outputVoltage->SetLabel(wxString::Format("Output voltage: %.2f V", regulator.outputVoltage));
 
 }

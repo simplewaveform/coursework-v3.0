@@ -22,36 +22,40 @@ include(${wxWidgets_USE_FILE})
 # Add the source files, and specify it as a macOS bundle
 add_executable(CircuitWave MACOSX_BUNDLE
         Src/main.cpp
-        Src/calculations.cpp
-        Inc/calculations.h
         Src/tabRCfilter.cpp
-        Inc/tabRCfilter.h
         Src/tabTL431.cpp
+        Src/tabLM317.cpp
+        Src/tabopamp.cpp
+        Src/lowpassRC.cpp
+        Src/imageProcessor.cpp
+        Src/lowpassLC.cpp
+        Src/tabLCfilter.cpp
+        Src/TL431.cpp
+        Src/circuitComponent.cpp
+        Src/LM317.cpp
+
+        Inc/tabRCfilter.h
         Inc/tabTL431.h
         Inc/main.h
-        Src/tabLM317.cpp
         Inc/tabLM317.h
-        Src/tabdivider.cpp
-        Inc/tabdivider.h
-        ${app_ICON}
+        Inc/tabopamp.h
         Inc/circuitComponent.h
         Inc/filter.h
         Inc/lowpassRC.h
         Inc/lowpassLC.h
-        Src/lowpassRC.cpp
-        Src/imageProcessor.cpp
         Inc/imageProcessor.h
-        Src/lowpassLC.cpp
-        Src/tabLCfilter.cpp
         Inc/tabLCfilter.h
-        Src/TL431.cpp
         Inc/TL431.h
         Inc/regulator.h
-        Src/circuitComponent.cpp)
+        Inc/LM317.h
+
+        ${app_ICON})
+
+
+
 
 # Include wxWidgets directories
 include_directories(${wxWidgets_INCLUDE_DIRS})
 
 # Link wxWidgets libraries
 target_link_libraries(CircuitWave ${wxWidgets_LIBRARIES})
-
