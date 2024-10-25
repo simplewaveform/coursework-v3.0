@@ -10,8 +10,8 @@ class MyFrame : public wxFrame {
 public:
     explicit MyFrame(const wxString& title);
 private:
-    void OnExit(wxCommandEvent &event);
     wxNotebook* notebook;
+    void OnExit(wxCommandEvent &event);
     void OnSaveRCData(wxCommandEvent&);
     void OnSaveLCData(wxCommandEvent&);
 };

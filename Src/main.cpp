@@ -7,6 +7,8 @@
 #include "../Inc/tabLM317.h"
 #include "../Inc/tabopamp.h"
 #include "../Inc/main.h"
+#include "../Inc/lowpassRC.h"
+
 
 bool MyApp::OnInit() {
 
@@ -21,11 +23,11 @@ MyFrame::MyFrame(const wxString& title) : wxFrame(nullptr, wxID_ANY, title, wxDe
 
     SetBackgroundColour(*wxBLACK);
     auto* fileMenu = new wxMenu;
-    fileMenu->Append(wxID_EXIT, wxString::Format("Выход\t%s-Q", "Cmd"), "Выход из приложения");
+    fileMenu->Append(wxID_EXIT, wxString::Format("Выход\t%s-Q", "cmd"), "Выход из приложения");
 
     // Добавляем пункты для экспорта данных
-    fileMenu->Append(wxID_SAVE, wxString::Format("Экспорт RC данных\t%s-S", "Cmd"), "Экспортировать данные RC фильтра");
-    fileMenu->Append(wxID_SAVEAS, wxString::Format("Экспорт LC данных\t%s-L", "Cmd"), "Экспортировать данные LC фильтра");
+    fileMenu->Append(wxID_SAVE, wxString::Format("Экспорт RC данных\t%s-S", "cmd"), "Экспортировать данные RC фильтра");
+    fileMenu->Append(wxID_SAVEAS, wxString::Format("Экспорт LC данных\t%s-L", "cmd"), "Экспортировать данные LC фильтра");
 
     auto* menuBar = new wxMenuBar;
     menuBar->Append(fileMenu, "&Файл");
@@ -70,19 +72,19 @@ void MyFrame::OnSaveRCData(wxCommandEvent&) {
                                 "Text files (*.txt)|*.txt", wxFD_SAVE | wxFD_OVERWRITE_PROMPT);
 
     if (saveFileDialog.ShowModal() == wxID_CANCEL)
-        return; // Если пользователь отменил сохранение, выходим
+        return;
 
     wxTextFile file(saveFileDialog.GetPath());
     if (!file.Exists()) {
         file.Create();
     } else {
         file.Open();
-        file.Clear(); // Очищаем файл перед записью новых данных
+        file.Clear();
     }
 
     // Получение данных для записи (пример данных)
     wxString rcData = "Рассчитанные данные для RC фильтра\n";
-    rcData += "Значение частоты: 1000 Hz\n";
+    rcData += "";
     rcData += "Сопротивление: 1 kOhm\n";
     rcData += "Емкость: 100 nF\n";
 
