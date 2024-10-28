@@ -2,6 +2,9 @@
 #include "../Inc/imageProcessor.h"
 #include "../Inc/lowpassRC.h"
 #include <wx/dcclient.h>
+#include <wx/txtstrm.h>
+#include <wx/string.h>
+#include <fstream>
 
 BEGIN_EVENT_TABLE(tabRCfilter, wxPanel)
 EVT_PAINT(tabRCfilter::OnPaint)
@@ -11,7 +14,7 @@ tabRCfilter::tabRCfilter(wxNotebook *parent) : wxPanel(parent, wxID_ANY),
                                                resistance(), capacitance(), calculatedFrequency(0), calculatedTime(0) {
 
     auto *sizer = new wxBoxSizer(wxVERTICAL);
-    auto *gridSizer = new wxFlexGridSizer(8, 2, 20, 50);
+    auto *gridSizer = new wxFlexGridSizer(5, 2, 20, 50);
     SetBackgroundColour(*wxBLACK);
 
     auto *labelR1 = new wxStaticText(this, wxID_ANY, "R1 (Ω):");
@@ -42,6 +45,48 @@ tabRCfilter::tabRCfilter(wxNotebook *parent) : wxPanel(parent, wxID_ANY),
 
     sizer->Add(gridSizer, 1, wxALL | wxEXPAND, 10);
     SetSizer(sizer);
+
+    wxString helpText = LoadHelpText("../Resources/help.txt");
+    wxArrayString lines = wxSplit(helpText, '\n');
+    int yOffset = 300;
+    for (const auto& line : lines) {
+        if (!line.IsEmpty()) {
+            new wxStaticText(this, wxID_ANY, line, wxPoint(10, yOffset));
+            yOffset += 20;
+        }
+    }
+
+    InitializeEmptyGraph();
+
+}
+
+void tabRCfilter::InitializeEmptyGraph() {
+    timeValues.clear();
+    responseValues.clear();
+    for (double t = 0; t <= 5; t += 0.1) {
+        timeValues.push_back(t);
+        responseValues.push_back(0.0);  // Пустой график, все значения - 0
+    }
+    Refresh();
+}
+
+wxString tabRCfilter::LoadHelpText(const wxString& filename) {
+
+    wxString content;
+    std::ifstream file(filename.ToStdString());
+
+    if (!file.is_open()) {
+        return "Ошибка: не удалось открыть файл справки.";
+    }
+
+    std::string line;
+    while (std::getline(file, line)) {
+        content += wxString::FromUTF8(line) + "\n";
+    }
+
+    file.close();
+
+    return content;
 }
 
 void tabRCfilter::OnCalculate(wxCommandEvent &) {
@@ -84,8 +129,8 @@ void tabRCfilter::OnPaint(wxPaintEvent &) {
     if (minTime == maxTime) return;
 
     dc.SetPen(*wxWHITE_PEN);
-    dc.DrawLine(graphStartX, graphStartY, graphStartX + graphWidth, graphStartY); // Ось X
-    dc.DrawLine(graphStartX, graphStartY, graphStartX, graphStartY - graphHeight); // Ось Y
+    dc.DrawLine(graphStartX, graphStartY, graphStartX + graphWidth, graphStartY);
+    dc.DrawLine(graphStartX, graphStartY, graphStartX, graphStartY - graphHeight);
 
     for (int i = 0; i <= numMarks; ++i) {
         double value = minTime + i * (maxTime - minTime) / numMarks / 5;
@@ -93,7 +138,6 @@ void tabRCfilter::OnPaint(wxPaintEvent &) {
         dc.DrawText(wxString::Format("%.1f", value), x - 10, graphStartY + 5);
     }
 
-    dc.DrawText(wxString::Format("Response"), graphStartX - 40, graphStartY - graphHeight - 30); // Подпись для оси Y
 
     dc.SetPen(*wxCYAN_PEN);
     for (size_t i = 1; i < timeValues.size(); ++i) {
@@ -109,18 +153,15 @@ void tabRCfilter::OnPaint(wxPaintEvent &) {
 
     const int numYMarks = 10;
     for (int i = 1; i <= numYMarks; ++i) {
-        double value = static_cast<double>(i) / numYMarks; // Значение по оси Y (от 0 до 1)
-        int y = graphStartY - static_cast<int>((value) * graphHeight); // Позиция по Y
-        dc.DrawText(wxString::Format("%.1f", value), graphStartX - 25, y - 5); // Подписи по оси Y
+        double value = static_cast<double>(i) / numYMarks;
+        int y = graphStartY - static_cast<int>((value) * graphHeight);
+        dc.DrawText(wxString::Format("%.1f", value), graphStartX - 25, y - 5);
     }
 
 }
 
-wxString tabRCfilter::GetData() const {
+wxString tabRCfilter::GetData() {
 
-    double resistance, capacitance;
-    inputR1->GetValue().ToDouble(&resistance);
-    inputC1->GetValue().ToDouble(&capacitance);
     return wxString::Format("Данные для RC фильтра\nСопротивление: %.2f Ohm\nЕмкость: %.2f μF\nCutoff Frequency: %.2f Hz\nTime Constant: %.2f μs\n",
                             resistance, capacitance, calculatedFrequency, calculatedTime);
 

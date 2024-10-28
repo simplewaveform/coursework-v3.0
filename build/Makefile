@@ -273,29 +273,29 @@ Src/tabLCfilter.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CircuitWave.dir/build.make CMakeFiles/CircuitWave.dir/Src/tabLCfilter.cpp.s
 .PHONY : Src/tabLCfilter.cpp.s
 
-Src/tabLM317.o: Src/tabLM317.cpp.o
-.PHONY : Src/tabLM317.o
+Src/tabregulator.o: Src/tabregulator.cpp.o
+.PHONY : Src/tabregulator.o
 
 # target to build an object file
-Src/tabLM317.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CircuitWave.dir/build.make CMakeFiles/CircuitWave.dir/Src/tabLM317.cpp.o
-.PHONY : Src/tabLM317.cpp.o
+Src/tabregulator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CircuitWave.dir/build.make CMakeFiles/CircuitWave.dir/Src/tabregulator.cpp.o
+.PHONY : Src/tabregulator.cpp.o
 
-Src/tabLM317.i: Src/tabLM317.cpp.i
-.PHONY : Src/tabLM317.i
+Src/tabregulator.i: Src/tabregulator.cpp.i
+.PHONY : Src/tabregulator.i
 
 # target to preprocess a source file
-Src/tabLM317.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CircuitWave.dir/build.make CMakeFiles/CircuitWave.dir/Src/tabLM317.cpp.i
-.PHONY : Src/tabLM317.cpp.i
+Src/tabregulator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CircuitWave.dir/build.make CMakeFiles/CircuitWave.dir/Src/tabregulator.cpp.i
+.PHONY : Src/tabregulator.cpp.i
 
-Src/tabLM317.s: Src/tabLM317.cpp.s
-.PHONY : Src/tabLM317.s
+Src/tabregulator.s: Src/tabregulator.cpp.s
+.PHONY : Src/tabregulator.s
 
 # target to generate assembly for a file
-Src/tabLM317.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CircuitWave.dir/build.make CMakeFiles/CircuitWave.dir/Src/tabLM317.cpp.s
-.PHONY : Src/tabLM317.cpp.s
+Src/tabregulator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CircuitWave.dir/build.make CMakeFiles/CircuitWave.dir/Src/tabregulator.cpp.s
+.PHONY : Src/tabregulator.cpp.s
 
 Src/tabRCfilter.o: Src/tabRCfilter.cpp.o
 .PHONY : Src/tabRCfilter.o
@@ -396,9 +396,9 @@ help:
 	@echo "... Src/tabLCfilter.o"
 	@echo "... Src/tabLCfilter.i"
 	@echo "... Src/tabLCfilter.s"
-	@echo "... Src/tabLM317.o"
-	@echo "... Src/tabLM317.i"
-	@echo "... Src/tabLM317.s"
+	@echo "... Src/tabregulator.o"
+	@echo "... Src/tabregulator.i"
+	@echo "... Src/tabregulator.s"
 	@echo "... Src/tabRCfilter.o"
 	@echo "... Src/tabRCfilter.i"
 	@echo "... Src/tabRCfilter.s"

@@ -2,8 +2,7 @@
 #include <wx/textfile.h>
 #include "../Inc/tabRCfilter.h"
 #include "../Inc/tabLCfilter.h"
-#include "../Inc/tabTL431.h"
-#include "../Inc/tabLM317.h"
+#include "../Inc/tabregulator.h"
 #include "../Inc/tabopamp.h"
 #include "../Inc/main.h"
 
@@ -39,14 +38,11 @@ MyFrame::MyFrame(const wxString& title) : wxFrame(nullptr, wxID_ANY, title, wxDe
     auto* tab2 = new tabLCfilter(notebook);
     notebook->AddPage(tab2, "НЧ фильтр (LC)");
 
-    auto* tab3 = new tabTL431(notebook);
-    notebook->AddPage(tab3, "TL431");
+    auto* tab3 = new tabregulator(notebook);
+    notebook->AddPage(tab3, "Voltage regulators");
 
-    auto* tab4 = new tabLM317(notebook);
-    notebook->AddPage(tab4, "LM317");
-
-    auto* tab5 = new tabopamp(notebook);
-    notebook->AddPage(tab5, "Инвертирующий усилитель");
+    auto* tab4 = new tabopamp(notebook);
+    notebook->AddPage(tab4, "Инвертирующий усилитель");
 
 }
 
@@ -80,9 +76,7 @@ void MyFrame::OnSaveData(wxCommandEvent&) {
         dataToSave = tab->GetData();
 //    } else if (auto* tab = dynamic_cast<tabLCfilter*>(activeTabPtr)) {
 //        //dataToSave = tab->GetData();
-//    } else if (auto* tab = dynamic_cast<tabTL431*>(activeTabPtr)) {
-//        //dataToSave = tab->GetData();
-//    } else if (auto* tab = dynamic_cast<tabLM317*>(activeTabPtr)) {
+//    } else if (auto* tab = dynamic_cast<tabregulator*>(activeTabPtr)) {
 //        //dataToSave = tab->GetData();
 //    } else if (auto* tab = dynamic_cast<tabopamp*>(activeTabPtr)) {
 //        //dataToSave = tab->GetData();

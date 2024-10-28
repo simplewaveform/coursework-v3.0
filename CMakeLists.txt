@@ -23,8 +23,7 @@ include(${wxWidgets_USE_FILE})
 add_executable(CircuitWave MACOSX_BUNDLE
         Src/main.cpp
         Src/tabRCfilter.cpp
-        Src/tabTL431.cpp
-        Src/tabLM317.cpp
+        Src/tabregulator.cpp
         Src/tabopamp.cpp
         Src/lowpassRC.cpp
         Src/imageProcessor.cpp
@@ -35,9 +34,8 @@ add_executable(CircuitWave MACOSX_BUNDLE
         Src/LM317.cpp
 
         Inc/tabRCfilter.h
-        Inc/tabTL431.h
         Inc/main.h
-        Inc/tabLM317.h
+        Inc/tabregulator.h
         Inc/tabopamp.h
         Inc/circuitComponent.h
         Inc/filter.h
@@ -52,7 +50,7 @@ add_executable(CircuitWave MACOSX_BUNDLE
         ${app_ICON}
         Inc/opamp.h
         Src/opamp.cpp
-        Inc/BaseTab.h)
+)
 
 
 

@@ -1116,6 +1116,6 @@ CMakeFiles/CircuitWave.dir/Src/main.cpp.o: \
   /opt/homebrew/include/wx-3.2/wx/osx/notebook.h \
   /Users/simple_waveform/Documents/programming/3/coursework\ v3.0/Src/../Inc/tabLCfilter.h \
   /Users/simple_waveform/Documents/programming/3/coursework\ v3.0/Src/../Inc/tabTL431.h \
-  /Users/simple_waveform/Documents/programming/3/coursework\ v3.0/Src/../Inc/tabLM317.h \
+  /Users/simple_waveform/Documents/programming/3/coursework\ v3.0/Src/../Inc/tabregulator.h \
   /Users/simple_waveform/Documents/programming/3/coursework\ v3.0/Src/../Inc/tabopamp.h \
   /Users/simple_waveform/Documents/programming/3/coursework\ v3.0/Src/../Inc/main.h

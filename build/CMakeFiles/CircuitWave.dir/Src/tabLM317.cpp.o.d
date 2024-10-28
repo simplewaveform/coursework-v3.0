@@ -1,6 +1,6 @@
-CMakeFiles/CircuitWave.dir/Src/tabLM317.cpp.o: \
-  /Users/simple_waveform/Documents/programming/3/coursework\ v3.0/Src/tabLM317.cpp \
-  /Users/simple_waveform/Documents/programming/3/coursework\ v3.0/Src/../Inc/tabLM317.h \
+CMakeFiles/CircuitWave.dir/Src/tabregulator.cpp.o: \
+  /Users/simple_waveform/Documents/programming/3/coursework\ v3.0/Src/tabregulator.cpp \
+  /Users/simple_waveform/Documents/programming/3/coursework\ v3.0/Src/../Inc/tabregulator.h \
   /opt/homebrew/include/wx-3.2/wx/wx.h \
   /opt/homebrew/include/wx-3.2/wx/defs.h \
   /opt/homebrew/include/wx-3.2/wx/platform.h \
