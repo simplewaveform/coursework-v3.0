@@ -12,8 +12,7 @@ public:
 private:
     wxNotebook* notebook;
     void OnExit(wxCommandEvent &event);
-    void OnSaveRCData(wxCommandEvent&);
-    void OnSaveLCData(wxCommandEvent&);
+    void OnSaveData(wxCommandEvent&);
 };
 
 #endif //CIRCUITWAVE_MAIN_H

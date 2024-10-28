@@ -42,7 +42,7 @@ tabLM317::tabLM317(wxNotebook* parent) : wxPanel(parent, wxID_ANY) {
 void tabLM317::OnCalculate(wxCommandEvent&) {
 
     LM317 regulator;
-    if (!(inputR1->GetValue().ToDouble(&regulator.R1) && inputR1->GetValue().ToDouble(&regulator.R2)
+    if (!(inputR1->GetValue().ToDouble(&regulator.R1) && inputR2->GetValue().ToDouble(&regulator.R2)
           && circuitComponent::validateInput(&regulator.R1, &regulator.R2))) return;
     regulator.calculateParameters();
     outputVoltage->SetLabel(wxString::Format("Output voltage: %.2f V", regulator.outputVoltage));

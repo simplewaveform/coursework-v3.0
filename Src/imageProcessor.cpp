@@ -20,6 +20,11 @@ wxBitmap ProcessImage(const wxString& filePath, int width, int height, bool inve
             data[i] = 255 - data[i];
         }
     }
+//    for (int i = 0; i < size; i++) {
+//        if (data[i] < 100) {
+//            data[i] = data[i] + 47;
+//        }
+//    }
 
     return image;
 }

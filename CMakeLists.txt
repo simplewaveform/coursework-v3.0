@@ -49,7 +49,10 @@ add_executable(CircuitWave MACOSX_BUNDLE
         Inc/regulator.h
         Inc/LM317.h
 
-        ${app_ICON})
+        ${app_ICON}
+        Inc/opamp.h
+        Src/opamp.cpp
+        Inc/BaseTab.h)
 
 
 

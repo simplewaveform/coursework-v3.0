@@ -6,7 +6,7 @@
 class regulator : public circuitComponent {
 
 public:
-    double R1{}, R2{}, outputVoltage{};
+    double R1{}, R2{}, outputVoltage{}, tolerance{};
 
 };
 
