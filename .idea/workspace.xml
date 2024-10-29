@@ -22,8 +22,15 @@
   <component name="ChangeListManager">
     <list default="true" id="266ab225-36eb-4c94-9a30-a0702de15409" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Inc/Filter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/Filter.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Inc/LowpassRC.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/LowpassRC.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/NonInvOpamp.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/NonInvOpamp.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Opamp.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/Opamp.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Regulator.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/Regulator.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/NonInvOpamp.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Src/NonInvOpamp.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CircuitWave.dir/Src/tabRCfilter.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CircuitWave.dir/Src/tabRCfilter.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +179,7 @@
       <workItem from="1730194553823" duration="168000" />
       <workItem from="1730197654462" duration="7167000" />
       <workItem from="1730231880157" duration="1216000" />
-      <workItem from="1730233107341" duration="1269000" />
+      <workItem from="1730233107341" duration="2734000" />
     </task>
     <task id="LOCAL-00001" summary="lc class added">
       <option name="closed" value="true" />
@@ -262,7 +269,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730233325732</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="RC in filter">
+      <option name="closed" value="true" />
+      <created>1730234401359</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1730234401359</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -313,6 +328,7 @@
     <MESSAGE value="commit" />
     <MESSAGE value="merged regulator tabs" />
     <MESSAGE value="almost cleaned up everything" />
-    <option name="LAST_COMMIT_MESSAGE" value="almost cleaned up everything" />
+    <MESSAGE value="RC in filter" />
+    <option name="LAST_COMMIT_MESSAGE" value="RC in filter" />
   </component>
 </project>

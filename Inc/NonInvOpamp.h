@@ -6,7 +6,7 @@
 class NonInvertingOpamp : public Opamp {
 
 public:
-    void calculateGain() override;
+    void calculateParameters() override;
 
 };
 
