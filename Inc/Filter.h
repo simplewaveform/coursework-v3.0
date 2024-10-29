@@ -5,7 +5,7 @@
 class Filter : public CircuitComponent {
 
 public:
-    double C{}, frequency{}, time{};
+    double R {}, C{}, frequency{}, time{};
 
 };
 

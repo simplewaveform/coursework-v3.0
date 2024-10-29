@@ -7,7 +7,6 @@ class LowpassRC : public Filter {
 
 public:
     explicit LowpassRC();
-    double R{};
     void calculateParameters() override;
 
 };
