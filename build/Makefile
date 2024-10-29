@@ -273,29 +273,29 @@ Src/tabLCfilter.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CircuitWave.dir/build.make CMakeFiles/CircuitWave.dir/Src/tabLCfilter.cpp.s
 .PHONY : Src/tabLCfilter.cpp.s
 
-Src/tabregulator.o: Src/tabregulator.cpp.o
-.PHONY : Src/tabregulator.o
+Src/tabRegulator.o: Src/tabRegulator.cpp.o
+.PHONY : Src/tabRegulator.o
 
 # target to build an object file
-Src/tabregulator.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CircuitWave.dir/build.make CMakeFiles/CircuitWave.dir/Src/tabregulator.cpp.o
-.PHONY : Src/tabregulator.cpp.o
+Src/tabRegulator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CircuitWave.dir/build.make CMakeFiles/CircuitWave.dir/Src/tabRegulator.cpp.o
+.PHONY : Src/tabRegulator.cpp.o
 
-Src/tabregulator.i: Src/tabregulator.cpp.i
-.PHONY : Src/tabregulator.i
+Src/tabRegulator.i: Src/tabRegulator.cpp.i
+.PHONY : Src/tabRegulator.i
 
 # target to preprocess a source file
-Src/tabregulator.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CircuitWave.dir/build.make CMakeFiles/CircuitWave.dir/Src/tabregulator.cpp.i
-.PHONY : Src/tabregulator.cpp.i
+Src/tabRegulator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CircuitWave.dir/build.make CMakeFiles/CircuitWave.dir/Src/tabRegulator.cpp.i
+.PHONY : Src/tabRegulator.cpp.i
 
-Src/tabregulator.s: Src/tabregulator.cpp.s
-.PHONY : Src/tabregulator.s
+Src/tabRegulator.s: Src/tabRegulator.cpp.s
+.PHONY : Src/tabRegulator.s
 
 # target to generate assembly for a file
-Src/tabregulator.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CircuitWave.dir/build.make CMakeFiles/CircuitWave.dir/Src/tabregulator.cpp.s
-.PHONY : Src/tabregulator.cpp.s
+Src/tabRegulator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CircuitWave.dir/build.make CMakeFiles/CircuitWave.dir/Src/tabRegulator.cpp.s
+.PHONY : Src/tabRegulator.cpp.s
 
 Src/tabRCfilter.o: Src/tabRCfilter.cpp.o
 .PHONY : Src/tabRCfilter.o
@@ -345,29 +345,29 @@ Src/tabTL431.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CircuitWave.dir/build.make CMakeFiles/CircuitWave.dir/Src/tabTL431.cpp.s
 .PHONY : Src/tabTL431.cpp.s
 
-Src/tabopamp.o: Src/tabopamp.cpp.o
-.PHONY : Src/tabopamp.o
+Src/tabOpamp.o: Src/tabOpamp.cpp.o
+.PHONY : Src/tabOpamp.o
 
 # target to build an object file
-Src/tabopamp.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CircuitWave.dir/build.make CMakeFiles/CircuitWave.dir/Src/tabopamp.cpp.o
-.PHONY : Src/tabopamp.cpp.o
+Src/tabOpamp.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CircuitWave.dir/build.make CMakeFiles/CircuitWave.dir/Src/tabOpamp.cpp.o
+.PHONY : Src/tabOpamp.cpp.o
 
-Src/tabopamp.i: Src/tabopamp.cpp.i
-.PHONY : Src/tabopamp.i
+Src/tabOpamp.i: Src/tabOpamp.cpp.i
+.PHONY : Src/tabOpamp.i
 
 # target to preprocess a source file
-Src/tabopamp.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CircuitWave.dir/build.make CMakeFiles/CircuitWave.dir/Src/tabopamp.cpp.i
-.PHONY : Src/tabopamp.cpp.i
+Src/tabOpamp.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CircuitWave.dir/build.make CMakeFiles/CircuitWave.dir/Src/tabOpamp.cpp.i
+.PHONY : Src/tabOpamp.cpp.i
 
-Src/tabopamp.s: Src/tabopamp.cpp.s
-.PHONY : Src/tabopamp.s
+Src/tabOpamp.s: Src/tabOpamp.cpp.s
+.PHONY : Src/tabOpamp.s
 
 # target to generate assembly for a file
-Src/tabopamp.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CircuitWave.dir/build.make CMakeFiles/CircuitWave.dir/Src/tabopamp.cpp.s
-.PHONY : Src/tabopamp.cpp.s
+Src/tabOpamp.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CircuitWave.dir/build.make CMakeFiles/CircuitWave.dir/Src/tabOpamp.cpp.s
+.PHONY : Src/tabOpamp.cpp.s
 
 # Help Target
 help:
@@ -396,18 +396,18 @@ help:
 	@echo "... Src/tabLCfilter.o"
 	@echo "... Src/tabLCfilter.i"
 	@echo "... Src/tabLCfilter.s"
-	@echo "... Src/tabregulator.o"
-	@echo "... Src/tabregulator.i"
-	@echo "... Src/tabregulator.s"
+	@echo "... Src/tabRegulator.o"
+	@echo "... Src/tabRegulator.i"
+	@echo "... Src/tabRegulator.s"
 	@echo "... Src/tabRCfilter.o"
 	@echo "... Src/tabRCfilter.i"
 	@echo "... Src/tabRCfilter.s"
 	@echo "... Src/tabTL431.o"
 	@echo "... Src/tabTL431.i"
 	@echo "... Src/tabTL431.s"
-	@echo "... Src/tabopamp.o"
-	@echo "... Src/tabopamp.i"
-	@echo "... Src/tabopamp.s"
+	@echo "... Src/tabOpamp.o"
+	@echo "... Src/tabOpamp.i"
+	@echo "... Src/tabOpamp.s"
 .PHONY : help
 
 

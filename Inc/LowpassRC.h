@@ -1,12 +1,12 @@
 #ifndef CIRCUITWAVE_LOWPASSRC_H
 #define CIRCUITWAVE_LOWPASSRC_H
 
-#include "../Inc/filter.h"
+#include "../Inc/Filter.h"
 
-class lowpassRC : public filter {
+class LowpassRC : public Filter {
 
 public:
-    explicit lowpassRC();
+    explicit LowpassRC();
     double R{};
     void calculateParameters() override;
 

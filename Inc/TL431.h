@@ -1,9 +1,9 @@
 #ifndef CIRCUITWAVE_TL431_H
 #define CIRCUITWAVE_TL431_H
 
-#include "../Inc/regulator.h"
+#include "../Inc/Regulator.h"
 
-class TL431 : public regulator {
+class TL431 : public Regulator {
 
 public:
     explicit TL431();

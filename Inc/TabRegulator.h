@@ -1,19 +1,23 @@
-#ifndef TABREGULATOR_H
-#define TABREGULATOR_H
+#ifndef tabRegulator_H
+#define tabRegulator_H
 
 #include <wx/wx.h>
 #include <wx/notebook.h>
 #include <wx/choice.h>
 #include <wx/statbmp.h>
 
-class tabregulator : public wxPanel
+class TabRegulator : public wxPanel
 {
 public:
-    explicit tabregulator(wxNotebook* parent);
+    wxString GetData();
+    explicit TabRegulator(wxNotebook* parent);
     void OnCalculate(wxCommandEvent& event);
 
 private:
     void OnRegulatorChoice(wxCommandEvent& event);
+    double R1;
+    double R2;
+    double voltage;
     wxChoice* regulatorChoice;
     wxTextCtrl* inputR1;
     wxTextCtrl* inputR2;
@@ -22,4 +26,4 @@ private:
 
 };
 
-#endif //TABREGULATOR_H
+#endif //tabRegulator_H

@@ -10,11 +10,11 @@ public:
 class MyFrame : public wxFrame {
 public:
     explicit MyFrame(const wxString& title);
+    void OnSaveData(wxCommandEvent&);
 
 private:
     wxNotebook* notebook;
     void OnExit(wxCommandEvent &event);
-    void OnSaveData(wxCommandEvent&);
 
 };
 

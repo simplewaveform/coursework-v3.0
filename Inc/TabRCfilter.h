@@ -6,10 +6,10 @@
 #include <wx/textctrl.h>
 #include <vector>
 
-class tabRCfilter : public wxPanel {
+class TabRCfilter : public wxPanel {
 public:
-    tabRCfilter(wxNotebook *parent);
-    virtual wxString GetData();
+    explicit TabRCfilter(wxNotebook *parent);
+    wxString GetData() const;
 
 private:
     void InitializeEmptyGraph();
@@ -24,7 +24,6 @@ private:
     double calculatedFrequency, calculatedTime;
     std::vector<double> timeValues;
     std::vector<double> responseValues;
-    wxString LoadHelpText(const wxString& filename);
 
 wxDECLARE_EVENT_TABLE();
 

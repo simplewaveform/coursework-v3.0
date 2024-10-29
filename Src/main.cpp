@@ -1,29 +1,30 @@
 #include <wx/menu.h>
 #include <wx/textfile.h>
-#include "../Inc/tabRCfilter.h"
-#include "../Inc/tabLCfilter.h"
-#include "../Inc/tabregulator.h"
-#include "../Inc/tabopamp.h"
+#include "../Inc/TabRCfilter.h"
+#include "../Inc/TabRegulator.h"
+#include "../Inc/TabOpamp.h"
 #include "../Inc/main.h"
+#include "../Inc/textManipulations.h"
 
 bool MyApp::OnInit() {
 
     wxInitAllImageHandlers();
     auto* frame = new MyFrame("Калькулятор параметров электронных компонентов и схем");
     frame->Show(true);
-
     return true;
+
 }
 
 MyFrame::MyFrame(const wxString& title) : wxFrame(nullptr, wxID_ANY, title, wxDefaultPosition, wxSize(850, 600)) {
 
     SetBackgroundColour(*wxBLACK);
+
     auto* fileMenu = new wxMenu;
-    fileMenu->Append(wxID_EXIT, wxString::Format("Выход\t%s-Q", "ctrl"), "Выход из приложения");
-    fileMenu->Append(wxID_SAVE, wxString::Format("Экспорт данных\t%s-S", "ctrl"), "Экспортировать данные");
+    fileMenu->Append(wxID_EXIT, wxString::Format("Quit\t%s-Q", "ctrl"), "");
+    fileMenu->Append(wxID_SAVE, wxString::Format("Export data\t%s-S", "ctrl"), "");
 
     auto* menuBar = new wxMenuBar;
-    menuBar->Append(fileMenu, "&Файл");
+    menuBar->Append(fileMenu, "&File");
     SetMenuBar(menuBar);
 
     Bind(wxEVT_MENU, &MyFrame::OnExit, this, wxID_EXIT);
@@ -32,17 +33,14 @@ MyFrame::MyFrame(const wxString& title) : wxFrame(nullptr, wxID_ANY, title, wxDe
     notebook = new wxNotebook(this, wxID_ANY);
     notebook->SetBackgroundColour(*wxBLACK);
 
-    auto* tab1 = new tabRCfilter(notebook);
-    notebook->AddPage(tab1, "НЧ фильтр (RC)");
+    auto* tab1 = new TabRCfilter(notebook);
+    notebook->AddPage(tab1, "Lowpass RC Filter");
 
-    auto* tab2 = new tabLCfilter(notebook);
-    notebook->AddPage(tab2, "НЧ фильтр (LC)");
+    auto* tab2 = new TabRegulator(notebook);
+    notebook->AddPage(tab2, "Voltage regulators");
 
-    auto* tab3 = new tabregulator(notebook);
-    notebook->AddPage(tab3, "Voltage regulators");
-
-    auto* tab4 = new tabopamp(notebook);
-    notebook->AddPage(tab4, "Инвертирующий усилитель");
+    auto* tab3 = new tabOpamp(notebook);
+    notebook->AddPage(tab3, "Operational amplifiers");
 
 }
 
@@ -56,38 +54,31 @@ void MyFrame::OnExit(wxCommandEvent&) {
 
 void MyFrame::OnSaveData(wxCommandEvent&) {
 
-    wxFileDialog saveFileDialog(this, _("Сохранить данные"), "", "",
+    wxFileDialog saveFileDialog(this, _("Export data"), "", "",
                                 "Text files (*.txt)|*.txt", wxFD_SAVE | wxFD_OVERWRITE_PROMPT);
     if (saveFileDialog.ShowModal() == wxID_CANCEL) return;
 
-    wxTextFile file(saveFileDialog.GetPath());
-    if (file.Exists()) {
-        file.Open();
-        file.Clear();
-    } else {
-        file.Create();
-    }
-
-    int activeTab = notebook->GetSelection();
+    wxString filePath = saveFileDialog.GetPath();
     wxString dataToSave;
 
+    int activeTab = notebook->GetSelection();
     auto* activeTabPtr = notebook->GetPage(activeTab);
-    if (auto* tab = dynamic_cast<tabRCfilter*>(activeTabPtr)) {
-        dataToSave = tab->GetData();
-//    } else if (auto* tab = dynamic_cast<tabLCfilter*>(activeTabPtr)) {
-//        //dataToSave = tab->GetData();
-//    } else if (auto* tab = dynamic_cast<tabregulator*>(activeTabPtr)) {
-//        //dataToSave = tab->GetData();
-//    } else if (auto* tab = dynamic_cast<tabopamp*>(activeTabPtr)) {
-//        //dataToSave = tab->GetData();
+
+    if (auto* tab1 = dynamic_cast<TabRCfilter*>(activeTabPtr)) {
+        dataToSave = tab1->GetData();
+    } else if (auto* tab2 = dynamic_cast<TabRegulator*>(activeTabPtr)) {
+        dataToSave = tab2->GetData();
+    } else if (auto* tab3 = dynamic_cast<tabOpamp*>(activeTabPtr)) {
+        dataToSave = tab3->GetData();
+    } else {
+        wxMessageBox("Cannot read data from active tab.", "Error", wxICON_ERROR);
+        return;
     }
 
-    if (!dataToSave.IsEmpty()) {
-        file.AddLine(dataToSave);
-        file.Write();
-        file.Close();
+    if (SaveDataToFile(filePath, dataToSave)) {
+        wxMessageBox("Data is saved successfully.", "Info", wxICON_INFORMATION);
     } else {
-        wxMessageBox("Нет данных для сохранения на данной вкладке.", "Предупреждение", wxICON_WARNING);
+        wxMessageBox("No data to save on this tab.", "Warning", wxICON_WARNING);
     }
 
 }

@@ -21,28 +21,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="266ab225-36eb-4c94-9a30-a0702de15409" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Inc/tabRegulator.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resources/help.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resources/Снимок экрана 2024-10-28 в 17.38.12.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Src/tabRegulator.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Inc/InvOpamp.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Inc/NonInvOpamp.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Inc/TextManipulations.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resources/invopamp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resources/noninvopamp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Src/InvOpamp.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Src/NonInvOpamp.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Src/TextManipulations.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Inc/BaseTab.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/LM317.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/LM317.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/TL431.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/TL431.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/circuitComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/CircuitComponent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/filter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/Filter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/lowpassLC.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/lowpassRC.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/LowpassRC.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Inc/main.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/main.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Inc/tabLM317.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Inc/tabRCfilter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/tabRCfilter.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Inc/tabTL431.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/lm317.png" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/lm317.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/tl431.png" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/tl431.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/Снимок экрана 2024-10-28 в 11.02.47.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/Снимок экрана 2024-10-28 в 11.02.47.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/opamp.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/Opamp.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/regulator.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/Regulator.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/tabLCfilter.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/tabRCfilter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/TabRCfilter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/tabRegulator.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/TabRegulator.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/tabopamp.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/TabOpamp.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/opamp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/Снимок экрана 2024-10-28 в 17.38.12.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/circuitComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Src/CircuitComponent.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/lowpassLC.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/lowpassRC.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Src/LowpassRC.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Src/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Src/tabLM317.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Src/tabRCfilter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Src/tabRCfilter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Src/tabTL431.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/opamp.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Src/Opamp.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/tabLCfilter.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/tabRCfilter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Src/TabRCfilter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/tabRegulator.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Src/TabRegulator.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/tabopamp.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Src/TabOpamp.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/DependInfo.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/Src/main.cpp.o.d" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/Src/main.cpp.o.d" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/Src/tabLM317.cpp.o.d" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/Src/tabLM317.cpp.o.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/Src/tabdivider.cpp.o.d" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/Src/tabdivider.cpp.o.d" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/build.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/cmake_clean.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/link.txt" afterDir="false" />
@@ -195,7 +211,13 @@
       <workItem from="1729758808305" duration="1345000" />
       <workItem from="1729836220995" duration="5401000" />
       <workItem from="1730047087370" duration="6227000" />
-      <workItem from="1730094985225" duration="15640000" />
+      <workItem from="1730094985225" duration="19435000" />
+      <workItem from="1730187117193" duration="157000" />
+      <workItem from="1730187428009" duration="5346000" />
+      <workItem from="1730194553823" duration="168000" />
+      <workItem from="1730197654462" duration="7167000" />
+      <workItem from="1730231880157" duration="1216000" />
+      <workItem from="1730233107341" duration="171000" />
     </task>
     <task id="LOCAL-00001" summary="lc class added">
       <option name="closed" value="true" />
@@ -269,7 +291,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730104070026</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="merged regulator tabs">
+      <option name="closed" value="true" />
+      <created>1730127732571</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1730127732571</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -318,6 +348,7 @@
     <MESSAGE value="minor fixes" />
     <MESSAGE value="graph RC plot added" />
     <MESSAGE value="commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit" />
+    <MESSAGE value="merged regulator tabs" />
+    <option name="LAST_COMMIT_MESSAGE" value="merged regulator tabs" />
   </component>
 </project>

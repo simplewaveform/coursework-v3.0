@@ -1,8 +1,8 @@
 #ifndef CIRCUITWAVE_FILTER_H
 #define CIRCUITWAVE_FILTER_H
-#include "../Inc/circuitComponent.h"
+#include "../Inc/CircuitComponent.h"
 
-class filter : public circuitComponent {
+class Filter : public CircuitComponent {
 
 public:
     double C{}, frequency{}, time{};

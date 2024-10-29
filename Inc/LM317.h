@@ -1,9 +1,9 @@
 #ifndef CIRCUITWAVE_LM317_H
 #define CIRCUITWAVE_LM317_H
 
-#include "../Inc/regulator.h"
+#include "../Inc/Regulator.h"
 
-class LM317 : public regulator {
+class LM317 : public Regulator {
 
 public:
     explicit LM317();

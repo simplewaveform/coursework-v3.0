@@ -1,16 +1,17 @@
-#include "../Inc/tabRCfilter.h"
+#include "../Inc/TabRCfilter.h"
+#include "../Inc/textManipulations.h"
 #include "../Inc/imageProcessor.h"
-#include "../Inc/lowpassRC.h"
+#include "../Inc/LowpassRC.h"
 #include <wx/dcclient.h>
 #include <wx/txtstrm.h>
 #include <wx/string.h>
 #include <fstream>
 
-BEGIN_EVENT_TABLE(tabRCfilter, wxPanel)
-EVT_PAINT(tabRCfilter::OnPaint)
+BEGIN_EVENT_TABLE(TabRCfilter, wxPanel)
+EVT_PAINT(TabRCfilter::OnPaint)
 END_EVENT_TABLE()
 
-tabRCfilter::tabRCfilter(wxNotebook *parent) : wxPanel(parent, wxID_ANY),
+TabRCfilter::TabRCfilter(wxNotebook *parent) : wxPanel(parent, wxID_ANY),
                                                resistance(), capacitance(), calculatedFrequency(0), calculatedTime(0) {
 
     auto *sizer = new wxBoxSizer(wxVERTICAL);
@@ -29,18 +30,18 @@ tabRCfilter::tabRCfilter(wxNotebook *parent) : wxPanel(parent, wxID_ANY),
     gridSizer->Add(labelC1, 0, wxALIGN_CENTER_VERTICAL);
     gridSizer->Add(inputC1, 0, wxEXPAND);
 
-    auto *calculateButton = new wxButton(this, wxID_ANY, "Calculate Parameters");
-    calculateButton->Bind(wxEVT_BUTTON, &tabRCfilter::OnCalculate, this);
+    auto *calculateButton = new wxButton(this, wxID_ANY, "Calculate parameters");
+    calculateButton->Bind(wxEVT_BUTTON, &TabRCfilter::OnCalculate, this);
     gridSizer->Add(calculateButton, 0, wxALIGN_CENTER_HORIZONTAL, 10);
 
-    resultCutoff = new wxStaticText(this, wxID_ANY, "Cutoff Frequency:");
-    resultTimeConstant = new wxStaticText(this, wxID_ANY, "Time Constant:");
-    gridSizer->Add(emptyCell1, 0, wxEXPAND);
+    resultCutoff = new wxStaticText(this, wxID_ANY, "Cutoff frequency:");
+    resultTimeConstant = new wxStaticText(this, wxID_ANY, "Time constant:");
+    gridSizer->Add(emptyCell1);
     gridSizer->Add(resultCutoff, 0, wxALIGN_LEFT | wxTOP, 10);
-    gridSizer->Add(emptyCell2, 0, wxEXPAND);
+    gridSizer->Add(emptyCell2);
     gridSizer->Add(resultTimeConstant, 0, wxALIGN_LEFT | wxTOP, 10);
 
-    auto *imageCtrl = new wxStaticBitmap(this, wxID_ANY, ProcessImage("../Resources/filter.png", 470, 200, true));
+    auto *imageCtrl = new wxStaticBitmap(this, wxID_ANY, ProcessImage("../Resources/Filter.png", 470, 200, true));
     imageCtrl->Move(350, 30);
 
     sizer->Add(gridSizer, 1, wxALL | wxEXPAND, 10);
@@ -60,52 +61,35 @@ tabRCfilter::tabRCfilter(wxNotebook *parent) : wxPanel(parent, wxID_ANY),
 
 }
 
-void tabRCfilter::InitializeEmptyGraph() {
+void TabRCfilter::InitializeEmptyGraph() {
     timeValues.clear();
     responseValues.clear();
-    for (double t = 0; t <= 5; t += 0.1) {
+    for (double t = 0; t <= 5; t += 5) {
         timeValues.push_back(t);
-        responseValues.push_back(0.0);  // Пустой график, все значения - 0
+        responseValues.push_back(0.0);
     }
     Refresh();
 }
 
-wxString tabRCfilter::LoadHelpText(const wxString& filename) {
+void TabRCfilter::OnCalculate(wxCommandEvent &) {
 
-    wxString content;
-    std::ifstream file(filename.ToStdString());
-
-    if (!file.is_open()) {
-        return "Ошибка: не удалось открыть файл справки.";
-    }
-
-    std::string line;
-    while (std::getline(file, line)) {
-        content += wxString::FromUTF8(line) + "\n";
-    }
-
-    file.close();
-
-    return content;
-}
-
-void tabRCfilter::OnCalculate(wxCommandEvent &) {
-
-    lowpassRC filter;
+    LowpassRC filter;
     if (!(inputR1->GetValue().ToDouble(&filter.R) && inputC1->GetValue().ToDouble(&filter.C)
-          && circuitComponent::validateInput(&filter.R, &filter.C))) return;
+          && CircuitComponent::validateInput(filter.R, filter.C))) return;
 
     filter.calculateParameters();
 
+    resistance = filter.R;
+    capacitance = filter.C;
     calculatedFrequency = filter.frequency;
     calculatedTime = filter.time;
 
-    resultCutoff->SetLabel(wxString::Format("Cutoff Frequency: %.2f Hz", calculatedFrequency));
-    resultTimeConstant->SetLabel(wxString::Format("Time Constant: %.2f μs", calculatedTime));
+    resultCutoff->SetLabel(wxString::Format("Cutoff frequency: %.2f Hz", calculatedFrequency));
+    resultTimeConstant->SetLabel(wxString::Format("Time constant: %.2f μs", calculatedTime));
 
     timeValues.clear();
     responseValues.clear();
-    for (double t = 0; t <= 5 * calculatedTime; t += 0.1) {
+    for (double t = 0; t <= 5 * calculatedTime; t += 0.05) {
         timeValues.push_back(t);
         responseValues.push_back(1.0 - exp(-t / calculatedTime));
     }
@@ -113,15 +97,11 @@ void tabRCfilter::OnCalculate(wxCommandEvent &) {
     Refresh();
 }
 
-void tabRCfilter::OnPaint(wxPaintEvent &) {
+void TabRCfilter::OnPaint(wxPaintEvent &) {
 
     wxPaintDC dc(this);
 
-    const int graphStartX = 390;
-    const int graphStartY = 490;
-    const int graphWidth = 400;
-    const int graphHeight = 210;
-    const int numMarks = 10;
+    const int graphStartX = 390, graphStartY = 490, graphWidth = 400, graphHeight = 210, numMarks = 10;
 
     if (timeValues.empty() || responseValues.empty()) return;
     double minTime = *std::min_element(timeValues.begin(), timeValues.end());
@@ -160,9 +140,9 @@ void tabRCfilter::OnPaint(wxPaintEvent &) {
 
 }
 
-wxString tabRCfilter::GetData() {
+wxString TabRCfilter::GetData() const {
 
-    return wxString::Format("Данные для RC фильтра\nСопротивление: %.2f Ohm\nЕмкость: %.2f μF\nCutoff Frequency: %.2f Hz\nTime Constant: %.2f μs\n",
+    return wxString::Format("RC Filter parameters:\nR: %.2f Ohm\nC: %.2f μF\nCutoff frequency: %.2f Hz\nTime constant: %.2f μs\n",
                             resistance, capacitance, calculatedFrequency, calculatedTime);
 
 }

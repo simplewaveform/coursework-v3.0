@@ -1,6 +1,6 @@
-CMakeFiles/CircuitWave.dir/Src/tabopamp.cpp.o: \
-  /Users/simple_waveform/Documents/programming/3/coursework\ v3.0/Src/tabopamp.cpp \
-  /Users/simple_waveform/Documents/programming/3/coursework\ v3.0/Src/../Inc/tabopamp.h \
+CMakeFiles/CircuitWave.dir/Src/tabOpamp.cpp.o: \
+  /Users/simple_waveform/Documents/programming/3/coursework\ v3.0/Src/tabOpamp.cpp \
+  /Users/simple_waveform/Documents/programming/3/coursework\ v3.0/Src/../Inc/tabOpamp.h \
   /opt/homebrew/include/wx-3.2/wx/wx.h \
   /opt/homebrew/include/wx-3.2/wx/defs.h \
   /opt/homebrew/include/wx-3.2/wx/platform.h \
