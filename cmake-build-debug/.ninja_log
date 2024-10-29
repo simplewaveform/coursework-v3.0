@@ -40,3 +40,11 @@
 8	1829	1730234411333388727	CMakeFiles/CircuitWave.dir/Src/main.cpp.o	6121907ada032647
 8	1878	1730234411382656103	CMakeFiles/CircuitWave.dir/Src/TabRCfilter.cpp.o	3699a06a8b640be3
 1878	2151	1730234411661052345	CircuitWave.app/Contents/MacOS/CircuitWave	5934ebf013d21676
+13	261	1730235902171443909	CMakeFiles/CircuitWave.dir/Src/NonInvOpamp.cpp.o	b0990f676cba1320
+13	261	1730235902171469950	CMakeFiles/CircuitWave.dir/Src/TL431.cpp.o	5b24d6b687a961ef
+13	261	1730235902171500325	CMakeFiles/CircuitWave.dir/Src/LM317.cpp.o	dad9aa3b71a1a9c2
+12	1768	1730235903667108112	CMakeFiles/CircuitWave.dir/Src/TabRegulator.cpp.o	f1ae42e7b6658b27
+10	45	1730235979341268658	CMakeFiles/CircuitWave.dir/Src/InvOpamp.cpp.o	87908257fcae3585
+10	45	1730235979341267324	CMakeFiles/CircuitWave.dir/Src/NonInvOpamp.cpp.o	b0990f676cba1320
+4	1581	1730236000270457080	CMakeFiles/CircuitWave.dir/Src/TabOpamp.cpp.o	7c88c2cb29e73fd5
+1581	1840	1730236000530048117	CircuitWave.app/Contents/MacOS/CircuitWave	5934ebf013d21676

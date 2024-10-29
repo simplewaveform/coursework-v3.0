@@ -73,7 +73,7 @@ void tabOpamp::OnCalculate(wxCommandEvent &event) {
         NonInvertingOpamp nonInvOpamp;
         if (!(inputRfbNonInv->GetValue().ToDouble(&nonInvOpamp.Rfb) && inputRgNonInv->GetValue().ToDouble(&nonInvOpamp.Rg)
               && CircuitComponent::validateInput(nonInvOpamp.Rfb, nonInvOpamp.Rg))) return;
-        nonInvOpamp.calculateGain();
+        nonInvOpamp.calculateParameters();
         RgNonInv = nonInvOpamp.Rg;
         RfbNonInv = nonInvOpamp.Rfb;
         gainNonInv = nonInvOpamp.gain;
@@ -82,7 +82,7 @@ void tabOpamp::OnCalculate(wxCommandEvent &event) {
         InvertingOpamp invOpamp;
         if (!(inputRfbInv->GetValue().ToDouble(&invOpamp.Rfb) && inputRinInv->GetValue().ToDouble(&invOpamp.Rin)
               && CircuitComponent::validateInput(invOpamp.Rfb, invOpamp.Rin))) return;
-        invOpamp.calculateGain();
+        invOpamp.calculateParameters();
         RinInv = invOpamp.Rin;
         RfbInv = invOpamp.Rfb;
         gainInv = invOpamp.gain;

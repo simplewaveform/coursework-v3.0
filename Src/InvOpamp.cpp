@@ -1,6 +1,6 @@
 #include "../Inc/InvOpamp.h"
 
-void InvertingOpamp::calculateGain() {
+void InvertingOpamp::calculateParameters() {
 
     if (Rin != 0) {
         gain = -Rfb / Rin;
