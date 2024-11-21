@@ -21,12 +21,95 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="266ab225-36eb-4c94-9a30-a0702de15409" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Inc/GraphRenderer.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Inc/TabBase.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Inc/magic.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Src/GraphRenderer.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Src/TabBase.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Inc/InvOpamp.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/InvOpamp.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/CircuitComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/CircuitComponent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/Filter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/Filter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/LowpassRC.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/LowpassRC.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Inc/Opamp.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/Opamp.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Src/InvOpamp.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Src/InvOpamp.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/TabOpamp.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/TabOpamp.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/TabRCfilter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/TabRCfilter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/TabRegulator.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/TabRegulator.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/main.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/main.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/CircuitComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Src/CircuitComponent.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/LowpassRC.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Src/LowpassRC.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/NonInvOpamp.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Src/NonInvOpamp.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/Opamp.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/TabOpamp.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Src/TabOpamp.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/TabRCfilter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Src/TabRCfilter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/TabRegulator.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Src/TabRegulator.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/imageProcessor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Src/imageProcessor.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Src/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/textManipulations.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Src/textManipulations.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeCache.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/3.26.4/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/3.26.4/CMakeCXXCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/3.26.4/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/3.26.4/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/3.26.4/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/3.26.4/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/3.26.4/CompilerIdC/CMakeCCompilerId.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/3.26.4/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/3.26.4/CompilerIdCXX/CMakeCXXCompilerId.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/CMakeConfigureLog.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/Src/calculations.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/Src/calculations.cpp.o.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/Src/imageProcessor.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/Src/imageProcessor.cpp.o.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/Src/lowpassLC.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/Src/lowpassLC.cpp.o.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/Src/lowpassRC.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/Src/lowpassRC.cpp.o.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/Src/main.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/Src/main.cpp.o.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/Src/tabLCfilter.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/Src/tabLCfilter.cpp.o.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/Src/tabLM317.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/Src/tabLM317.cpp.o.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/Src/tabRCfilter.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/Src/tabRCfilter.cpp.o.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/Src/tabTL431.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/Src/tabTL431.cpp.o.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/Src/tabdivider.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/Src/tabdivider.cpp.o.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/compiler_depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/compiler_depend.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/CircuitWave.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Makefile.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Makefile2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/cmake.check_cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/progress.marks" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CircuitWave.app/Contents/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CircuitWave.app/Contents/MacOS/CircuitWave" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CircuitWave.app/Contents/Resources/myapp.icns" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/cmake_install.cmake" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CircuitWave.dir/Src/tabRCfilter.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CircuitWave.dir/Src/tabRCfilter.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/SimpleWxApp.app/Contents/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/SimpleWxApp.app/Contents/MacOS/SimpleWxApp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/SimpleWxApp.app/Contents/Resources/myapp.icns" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/SimpleWxApp.app/Contents/Resources/tabbase.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Записка.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Лист задания.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Титульный лист.docx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,12 +187,12 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+    <configuration name="CircuitWave" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CircuitWave" TARGET_NAME="CircuitWave" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CircuitWave" RUN_TARGET_NAME="CircuitWave">
       <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CircuitWave" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CircuitWave" TARGET_NAME="CircuitWave" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CircuitWave" RUN_TARGET_NAME="CircuitWave">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -175,7 +258,19 @@
       <workItem from="1730194553823" duration="168000" />
       <workItem from="1730197654462" duration="7167000" />
       <workItem from="1730231880157" duration="1216000" />
-      <workItem from="1730233107341" duration="2842000" />
+      <workItem from="1730233107341" duration="3909000" />
+      <workItem from="1730268234229" duration="895000" />
+      <workItem from="1730269139073" duration="36000" />
+      <workItem from="1730269299958" duration="1124000" />
+      <workItem from="1730270542332" duration="6807000" />
+      <workItem from="1730441003752" duration="5356000" />
+      <workItem from="1731310164116" duration="118000" />
+      <workItem from="1731310606718" duration="33000" />
+      <workItem from="1731404866430" duration="37000" />
+      <workItem from="1731564684768" duration="7835000" />
+      <workItem from="1731652744512" duration="7000" />
+      <workItem from="1732082783013" duration="840000" />
+      <workItem from="1732084943953" duration="13702000" />
     </task>
     <task id="LOCAL-00001" summary="lc class added">
       <option name="closed" value="true" />
@@ -281,7 +376,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730235888695</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="extending fixed">
+      <option name="closed" value="true" />
+      <created>1730236018408</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1730236018408</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -4,12 +4,14 @@
 #include <wx/wx.h>
 #include <wx/notebook.h>
 
-class tabOpamp : public wxPanel {
+class TabOpamp : public wxPanel {
 public:
-    explicit tabOpamp(wxNotebook* parent);
+    explicit TabOpamp(wxNotebook* parent);
     void OnCalculate(wxCommandEvent& event);
+    template <typename T>
+    void CalculateOpampGain(wxTextCtrl* inputRfb, wxTextCtrl* inputRin, wxStaticText* resultGain);
     wxString GetData() const;
-    double RgNonInv, RfbNonInv, gainNonInv, RinInv, RfbInv, gainInv;
+    double RgNonInv{}, RfbNonInv{}, gainNonInv{}, RinInv{}, RfbInv{}, gainInv{};
 
 private:
     wxTextCtrl* inputRfbNonInv;

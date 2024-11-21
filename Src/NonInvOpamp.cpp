@@ -2,8 +2,8 @@
 
 void NonInvertingOpamp::calculateParameters() {
 
-    if (Rg != 0) {
-        gain = 1 + (Rfb / Rg);
+    if (Rin != 0) {
+        gain = 1 + (Rfb / Rin);
     } else {
         gain = 0;
     }

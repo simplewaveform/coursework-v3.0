@@ -5,7 +5,7 @@ wxBitmap ProcessImage(const wxString& filePath, int width, int height, bool inve
     wxImage image(filePath, wxBITMAP_TYPE_ANY);
 
     if (!image.IsOk()) {
-        wxMessageBox("Failed to load image", "Error", wxOK | wxICON_ERROR);
+        wxLogError("Failed to load image");
         return image;
     }
 
@@ -20,11 +20,6 @@ wxBitmap ProcessImage(const wxString& filePath, int width, int height, bool inve
             data[i] = 255 - data[i];
         }
     }
-//    for (int i = 0; i < size; i++) {
-//        if (data[i] < 100) {
-//            data[i] = data[i] + 47;
-//        }
-//    }
 
     return image;
 }

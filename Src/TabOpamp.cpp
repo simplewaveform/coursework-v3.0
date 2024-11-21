@@ -1,59 +1,33 @@
 #include "../Inc/TabOpamp.h"
 #include "../Inc/NonInvOpamp.h"
 #include "../Inc/InvOpamp.h"
-#include "../Inc/CircuitComponent.h"
+#include "../Inc/main.h"
 #include "../Inc/imageProcessor.h"
+#include <format>
+#include <sstream>
 
-enum {
-    ID_CALCULATE_NON_INV = 6000,
-    ID_CALCULATE_INV = 6001
-};
-
-tabOpamp::tabOpamp(wxNotebook *parent) : wxPanel(parent, wxID_ANY) {
+TabOpamp::TabOpamp(wxNotebook *parent) : wxPanel(parent, wxID_ANY) {
 
     auto *mainSizer = new wxBoxSizer(wxVERTICAL);
     auto *gridSizer = new wxFlexGridSizer(14, 2, 20, 50);
-
     SetBackgroundColour(*wxBLACK);
 
     gridSizer->Add(new wxStaticText(this, wxID_ANY, "Non-Inverting Amplifier"), 0, wxALIGN_LEFT | wxALL, 5);
-    gridSizer->Add(new wxStaticText(this, wxID_ANY, ""));
-    gridSizer->Add(new wxStaticText(this, wxID_ANY, "Rfb (Ω):"));
-    inputRfbNonInv = new wxTextCtrl(this, wxID_ANY);
-    gridSizer->Add(inputRfbNonInv, 0, wxEXPAND);
-
-    gridSizer->Add(new wxStaticText(this, wxID_ANY, "Rg (Ω):"));
-    inputRgNonInv = new wxTextCtrl(this, wxID_ANY);
-    gridSizer->Add(inputRgNonInv, 0, wxEXPAND);
-
-    calculateButtonNonInv = new wxButton(this, ID_CALCULATE_NON_INV, "Calculate gain");
-    calculateButtonNonInv->Bind(wxEVT_BUTTON, &tabOpamp::OnCalculate, this);
-    gridSizer->Add(calculateButtonNonInv, 0, wxALIGN_LEFT, 10);
-    gridSizer->Add(new wxStaticText(this, wxID_ANY, ""));
-
+    MyFrame::AddEmptyCell(this, gridSizer, 1);
+    inputRfbNonInv = MyFrame::CreateInputField(this, gridSizer, "Rfb (Ω):");
+    inputRgNonInv = MyFrame::CreateInputField(this, gridSizer, "Rg (Ω):");
+    calculateButtonNonInv = MyFrame::CreateButton(this, gridSizer, "Calculate gain", this, &TabOpamp::OnCalculate);
+    MyFrame::AddEmptyCell(this, gridSizer, 1);
     resultGainNonInv = new wxStaticText(this, wxID_ANY, "Output gain:");
     gridSizer->Add(resultGainNonInv, 0, wxALIGN_LEFT | wxTOP, 10);
 
-    // Инвертирующий усилитель
-    gridSizer->Add(new wxStaticText(this, wxID_ANY, ""));
-    gridSizer->Add(new wxStaticText(this, wxID_ANY, ""));
-    gridSizer->Add(new wxStaticText(this, wxID_ANY, ""));
+    MyFrame::AddEmptyCell(this, gridSizer, 3);
     gridSizer->Add(new wxStaticText(this, wxID_ANY, "Inverting Amplifier"), 0, wxALIGN_LEFT | wxALL, 5);
-    gridSizer->Add(new wxStaticText(this, wxID_ANY, ""));
-
-    gridSizer->Add(new wxStaticText(this, wxID_ANY, "Rin (Ω):"));
-    inputRinInv = new wxTextCtrl(this, wxID_ANY);
-    gridSizer->Add(inputRinInv, 0, wxEXPAND);
-
-    gridSizer->Add(new wxStaticText(this, wxID_ANY, "Rfb (Ω):"));
-    inputRfbInv = new wxTextCtrl(this, wxID_ANY);
-    gridSizer->Add(inputRfbInv, 0, wxEXPAND);
-
-    calculateButtonInv = new wxButton(this, ID_CALCULATE_INV, "Calculate gain");
-    calculateButtonInv->Bind(wxEVT_BUTTON, &tabOpamp::OnCalculate, this);
-    gridSizer->Add(calculateButtonInv, 0, wxALIGN_LEFT, 10);
-
-    gridSizer->Add(new wxStaticText(this, wxID_ANY, ""));
+    MyFrame::AddEmptyCell(this, gridSizer, 1);
+    inputRinInv = MyFrame::CreateInputField(this, gridSizer, "Rin (Ω):");
+    inputRfbInv = MyFrame::CreateInputField(this, gridSizer, "Rfb (Ω):");
+    calculateButtonInv = MyFrame::CreateButton(this, gridSizer, "Calculate gain", this, &TabOpamp::OnCalculate);
+    MyFrame::AddEmptyCell(this, gridSizer, 1);
     resultGainInv = new wxStaticText(this, wxID_ANY, "Output gain:");
     gridSizer->Add(resultGainInv, 0, wxALIGN_LEFT | wxTOP, 10);
 
@@ -64,37 +38,34 @@ tabOpamp::tabOpamp(wxNotebook *parent) : wxPanel(parent, wxID_ANY) {
 
     mainSizer->Add(gridSizer, 1, wxALL | wxEXPAND, 10);
     SetSizer(mainSizer);
-
 }
 
-void tabOpamp::OnCalculate(wxCommandEvent &event) {
-
+void TabOpamp::OnCalculate(wxCommandEvent &event) {
     if (event.GetEventObject() == calculateButtonNonInv) {
-        NonInvertingOpamp nonInvOpamp;
-        if (!(inputRfbNonInv->GetValue().ToDouble(&nonInvOpamp.Rfb) && inputRgNonInv->GetValue().ToDouble(&nonInvOpamp.Rg)
-              && CircuitComponent::validateInput(nonInvOpamp.Rfb, nonInvOpamp.Rg))) return;
-        nonInvOpamp.calculateParameters();
-        RgNonInv = nonInvOpamp.Rg;
-        RfbNonInv = nonInvOpamp.Rfb;
-        gainNonInv = nonInvOpamp.gain;
-        resultGainNonInv->SetLabel(wxString::Format("Output gain: %.2f", gainNonInv));
+        CalculateOpampGain<NonInvertingOpamp>(inputRfbNonInv, inputRgNonInv, resultGainNonInv);
     } else if (event.GetEventObject() == calculateButtonInv) {
-        InvertingOpamp invOpamp;
-        if (!(inputRfbInv->GetValue().ToDouble(&invOpamp.Rfb) && inputRinInv->GetValue().ToDouble(&invOpamp.Rin)
-              && CircuitComponent::validateInput(invOpamp.Rfb, invOpamp.Rin))) return;
-        invOpamp.calculateParameters();
-        RinInv = invOpamp.Rin;
-        RfbInv = invOpamp.Rfb;
-        gainInv = invOpamp.gain;
-        resultGainInv->SetLabel(wxString::Format("Output gain: %.2f", gainInv));
+        CalculateOpampGain<InvertingOpamp>(inputRfbInv, inputRinInv, resultGainInv);
     }
-
 }
 
-wxString tabOpamp::GetData() const {
+template <typename T>
+void TabOpamp::CalculateOpampGain(wxTextCtrl* inputRfb, wxTextCtrl* inputRin, wxStaticText* resultGain) {
+    T opamp;
+    //if (!(CircuitComponent::validateValue(inputRfb, opamp.Rfb) &&
+    //      CircuitComponent::validateValue(inputRin, opamp.Rin))) return;
 
-    return wxString::Format("Opamp parameters:\n   Inverting amplifier:\nRin: %.2f Ohm\nRfb: %.2f Ohm\n"
-                            "   Gain: %.2f\nNon-Inverting amplifier:\nRg: %.2f Ohm\nRfb: %.2f Ohm\nGain: %.2f\n",
-                            RgNonInv, RfbNonInv, gainNonInv, RinInv, RfbInv, gainInv);
+    opamp.calculateParameters();
+    resultGain->SetLabel(wxString::Format("Output gain: %.2f", opamp.gain));
+}
 
+wxString TabOpamp::GetData() const {
+    return std::format (
+            "Opamp parameters:\n   Inverting amplifier:\n"
+            "Rin: {:.2f} Ohm\n"
+            "Rfb: {:.2f} Ohm\n"
+            "Gain: {:.2f}\nNon-Inverting amplifier:\n"
+            "Rg: {:.2f} Ohm\n"
+            "Rfb: {:.2f} Ohm\n"
+            "Gain: {:.2f}\n",
+            RinInv, RfbInv, gainInv, RgNonInv, RfbNonInv, gainNonInv);
 }

@@ -5,25 +5,20 @@
 #include <wx/notebook.h>
 #include <wx/textctrl.h>
 #include <vector>
+#include "../Inc/LowpassRC.h"
 
 class TabRCfilter : public wxPanel {
 public:
     explicit TabRCfilter(wxNotebook *parent);
-    wxString GetData() const;
+    static wxString GetData(LowpassRC &filter) ;
 
 private:
     void InitializeEmptyGraph();
     void OnCalculate(wxCommandEvent &event);
     void OnPaint(wxPaintEvent &event);
-    wxTextCtrl *inputR1;
-    wxTextCtrl *inputC1;
-    wxStaticText *resultCutoff;
-    wxStaticText *resultTimeConstant;
-    double resistance;
-    double capacitance;
-    double calculatedFrequency, calculatedTime;
-    std::vector<double> timeValues;
-    std::vector<double> responseValues;
+    wxTextCtrl *inputR1, *inputC1;
+    wxStaticText *resultCutoff, *resultTimeConstant;
+    std::vector<double> timeValues, responseValues;
 
 wxDECLARE_EVENT_TABLE();
 

@@ -4,8 +4,12 @@
 
 class Filter : public CircuitComponent {
 
+protected:
+    double frequency{};
+    double time{};
 public:
-    double R {}, C{}, frequency{}, time{};
+    [[nodiscard]] double getFrequency() const { return frequency; };
+    [[nodiscard]] double getTime() const { return time; };
 
 };
 
