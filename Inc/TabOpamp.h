@@ -3,25 +3,29 @@
 
 #include <wx/wx.h>
 #include <wx/notebook.h>
+#include "../Inc/InvOpamp.h"
+#include "../Inc/NonInvOpamp.h"
+#include "../Inc/BaseTab.h"
 
-class TabOpamp : public wxPanel {
+/**
+ * @brief Tab for operational amplifier calculations.
+ * This tab allows the user to input values for both inverting and non-inverting amplifiers
+ * and calculates their gain based on resistor values.
+ */
+class TabOpamp : public BaseTab {
+private:
+    wxTextCtrl *inputRfbNonInv, *inputRgNonInv, *inputRfbInv, *inputRinInv;
+    wxStaticText *resultGainNonInv, *resultGainInv;
+    wxButton *calculateButtonNonInv{}, *calculateButtonInv{};
+
 public:
+    InvertingOpamp invertingOpamp;
+    NonInvertingOpamp nonInvertingOpamp;
     explicit TabOpamp(wxNotebook* parent);
     void OnCalculate(wxCommandEvent& event);
+    wxString GetData() const override;
     template <typename T>
-    void CalculateOpampGain(wxTextCtrl* inputRfb, wxTextCtrl* inputRin, wxStaticText* resultGain);
-    wxString GetData() const;
-    double RgNonInv{}, RfbNonInv{}, gainNonInv{}, RinInv{}, RfbInv{}, gainInv{};
-
-private:
-    wxTextCtrl* inputRfbNonInv;
-    wxTextCtrl* inputRgNonInv;
-    wxStaticText* resultGainNonInv;
-    wxTextCtrl* inputRfbInv;
-    wxTextCtrl* inputRinInv;
-    wxStaticText* resultGainInv;
-    wxButton* calculateButtonNonInv{};
-    wxButton* calculateButtonInv{};
+    static void CalculateOpampGain(wxTextCtrl* inputRfb, wxTextCtrl* inputRin, wxStaticText* resultGain);
 
 };
 

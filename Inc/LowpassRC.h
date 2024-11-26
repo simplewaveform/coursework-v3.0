@@ -3,8 +3,11 @@
 
 #include "../Inc/Filter.h"
 
+/**
+ * @brief Low-pass RC filter class.
+ * Calculates the cutoff frequency and time constant for an RC low-pass filter.
+ */
 class LowpassRC : public Filter {
-
 private:
     double R{}, C{};
 
@@ -13,8 +16,6 @@ public:
     void setC(double c) { this->C = c; }
     [[nodiscard]] double getR() const { return R; };
     [[nodiscard]] double getC() const { return C; };
-    explicit LowpassRC() = default;
-    ~LowpassRC() = default;
     void calculateParameters() override;
 
 };

@@ -51,9 +51,9 @@ build CircuitWave.app/Contents/Resources/myapp.icns: COPY_OSX_CONTENT /Users/sim
 
 build cmake_object_order_depends_target_CircuitWave: phony || CircuitWave.app/Contents/Resources/myapp.icns
 
-build CMakeFiles/CircuitWave.dir/Src/main.cpp.o: CXX_COMPILER__CircuitWave_unscanned_Debug /Users/simple_waveform/Documents/programming/3/coursework$ v3.0/Src/main.cpp || cmake_object_order_depends_target_CircuitWave
+build CMakeFiles/CircuitWave.dir/Src/app.cpp.o: CXX_COMPILER__CircuitWave_unscanned_Debug /Users/simple_waveform/Documents/programming/3/coursework$ v3.0/Src/app.cpp || cmake_object_order_depends_target_CircuitWave
   DEFINES = -DWXUSINGDLL -D_FILE_OFFSET_BITS=64 -D__WXMAC__ -D__WXOSX_COCOA__ -D__WXOSX__
-  DEP_FILE = CMakeFiles/CircuitWave.dir/Src/main.cpp.o.d
+  DEP_FILE = CMakeFiles/CircuitWave.dir/Src/app.cpp.o.d
   FLAGS = -g -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
   INCLUDES = -isystem /opt/homebrew/lib/wx/include/osx_cocoa-unicode-3.2 -isystem /opt/homebrew/include/wx-3.2
   OBJECT_DIR = CMakeFiles/CircuitWave.dir
@@ -91,9 +91,9 @@ build CMakeFiles/CircuitWave.dir/Src/LowpassRC.cpp.o: CXX_COMPILER__CircuitWave_
   OBJECT_DIR = CMakeFiles/CircuitWave.dir
   OBJECT_FILE_DIR = CMakeFiles/CircuitWave.dir/Src
 
-build CMakeFiles/CircuitWave.dir/Src/imageProcessor.cpp.o: CXX_COMPILER__CircuitWave_unscanned_Debug /Users/simple_waveform/Documents/programming/3/coursework$ v3.0/Src/imageProcessor.cpp || cmake_object_order_depends_target_CircuitWave
+build CMakeFiles/CircuitWave.dir/Src/ImageProcessor.cpp.o: CXX_COMPILER__CircuitWave_unscanned_Debug /Users/simple_waveform/Documents/programming/3/coursework$ v3.0/Src/ImageProcessor.cpp || cmake_object_order_depends_target_CircuitWave
   DEFINES = -DWXUSINGDLL -D_FILE_OFFSET_BITS=64 -D__WXMAC__ -D__WXOSX_COCOA__ -D__WXOSX__
-  DEP_FILE = CMakeFiles/CircuitWave.dir/Src/imageProcessor.cpp.o.d
+  DEP_FILE = CMakeFiles/CircuitWave.dir/Src/ImageProcessor.cpp.o.d
   FLAGS = -g -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
   INCLUDES = -isystem /opt/homebrew/lib/wx/include/osx_cocoa-unicode-3.2 -isystem /opt/homebrew/include/wx-3.2
   OBJECT_DIR = CMakeFiles/CircuitWave.dir
@@ -102,14 +102,6 @@ build CMakeFiles/CircuitWave.dir/Src/imageProcessor.cpp.o: CXX_COMPILER__Circuit
 build CMakeFiles/CircuitWave.dir/Src/TL431.cpp.o: CXX_COMPILER__CircuitWave_unscanned_Debug /Users/simple_waveform/Documents/programming/3/coursework$ v3.0/Src/TL431.cpp || cmake_object_order_depends_target_CircuitWave
   DEFINES = -DWXUSINGDLL -D_FILE_OFFSET_BITS=64 -D__WXMAC__ -D__WXOSX_COCOA__ -D__WXOSX__
   DEP_FILE = CMakeFiles/CircuitWave.dir/Src/TL431.cpp.o.d
-  FLAGS = -g -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
-  INCLUDES = -isystem /opt/homebrew/lib/wx/include/osx_cocoa-unicode-3.2 -isystem /opt/homebrew/include/wx-3.2
-  OBJECT_DIR = CMakeFiles/CircuitWave.dir
-  OBJECT_FILE_DIR = CMakeFiles/CircuitWave.dir/Src
-
-build CMakeFiles/CircuitWave.dir/Src/CircuitComponent.cpp.o: CXX_COMPILER__CircuitWave_unscanned_Debug /Users/simple_waveform/Documents/programming/3/coursework$ v3.0/Src/CircuitComponent.cpp || cmake_object_order_depends_target_CircuitWave
-  DEFINES = -DWXUSINGDLL -D_FILE_OFFSET_BITS=64 -D__WXMAC__ -D__WXOSX_COCOA__ -D__WXOSX__
-  DEP_FILE = CMakeFiles/CircuitWave.dir/Src/CircuitComponent.cpp.o.d
   FLAGS = -g -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
   INCLUDES = -isystem /opt/homebrew/lib/wx/include/osx_cocoa-unicode-3.2 -isystem /opt/homebrew/include/wx-3.2
   OBJECT_DIR = CMakeFiles/CircuitWave.dir
@@ -139,17 +131,17 @@ build CMakeFiles/CircuitWave.dir/Src/NonInvOpamp.cpp.o: CXX_COMPILER__CircuitWav
   OBJECT_DIR = CMakeFiles/CircuitWave.dir
   OBJECT_FILE_DIR = CMakeFiles/CircuitWave.dir/Src
 
-build CMakeFiles/CircuitWave.dir/Src/textManipulations.cpp.o: CXX_COMPILER__CircuitWave_unscanned_Debug /Users/simple_waveform/Documents/programming/3/coursework$ v3.0/Src/textManipulations.cpp || cmake_object_order_depends_target_CircuitWave
+build CMakeFiles/CircuitWave.dir/Src/TextManipulator.cpp.o: CXX_COMPILER__CircuitWave_unscanned_Debug /Users/simple_waveform/Documents/programming/3/coursework$ v3.0/Src/TextManipulator.cpp || cmake_object_order_depends_target_CircuitWave
   DEFINES = -DWXUSINGDLL -D_FILE_OFFSET_BITS=64 -D__WXMAC__ -D__WXOSX_COCOA__ -D__WXOSX__
-  DEP_FILE = CMakeFiles/CircuitWave.dir/Src/textManipulations.cpp.o.d
+  DEP_FILE = CMakeFiles/CircuitWave.dir/Src/TextManipulator.cpp.o.d
   FLAGS = -g -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
   INCLUDES = -isystem /opt/homebrew/lib/wx/include/osx_cocoa-unicode-3.2 -isystem /opt/homebrew/include/wx-3.2
   OBJECT_DIR = CMakeFiles/CircuitWave.dir
   OBJECT_FILE_DIR = CMakeFiles/CircuitWave.dir/Src
 
-build CMakeFiles/CircuitWave.dir/Src/TabBase.cpp.o: CXX_COMPILER__CircuitWave_unscanned_Debug /Users/simple_waveform/Documents/programming/3/coursework$ v3.0/Src/TabBase.cpp || cmake_object_order_depends_target_CircuitWave
+build CMakeFiles/CircuitWave.dir/Src/TabTools.cpp.o: CXX_COMPILER__CircuitWave_unscanned_Debug /Users/simple_waveform/Documents/programming/3/coursework$ v3.0/Src/TabTools.cpp || cmake_object_order_depends_target_CircuitWave
   DEFINES = -DWXUSINGDLL -D_FILE_OFFSET_BITS=64 -D__WXMAC__ -D__WXOSX_COCOA__ -D__WXOSX__
-  DEP_FILE = CMakeFiles/CircuitWave.dir/Src/TabBase.cpp.o.d
+  DEP_FILE = CMakeFiles/CircuitWave.dir/Src/TabTools.cpp.o.d
   FLAGS = -g -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
   INCLUDES = -isystem /opt/homebrew/lib/wx/include/osx_cocoa-unicode-3.2 -isystem /opt/homebrew/include/wx-3.2
   OBJECT_DIR = CMakeFiles/CircuitWave.dir
@@ -163,6 +155,14 @@ build CMakeFiles/CircuitWave.dir/Src/GraphRenderer.cpp.o: CXX_COMPILER__CircuitW
   OBJECT_DIR = CMakeFiles/CircuitWave.dir
   OBJECT_FILE_DIR = CMakeFiles/CircuitWave.dir/Src
 
+build CMakeFiles/CircuitWave.dir/Src/ExceptionHandler.cpp.o: CXX_COMPILER__CircuitWave_unscanned_Debug /Users/simple_waveform/Documents/programming/3/coursework$ v3.0/Src/ExceptionHandler.cpp || cmake_object_order_depends_target_CircuitWave
+  DEFINES = -DWXUSINGDLL -D_FILE_OFFSET_BITS=64 -D__WXMAC__ -D__WXOSX_COCOA__ -D__WXOSX__
+  DEP_FILE = CMakeFiles/CircuitWave.dir/Src/ExceptionHandler.cpp.o.d
+  FLAGS = -g -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
+  INCLUDES = -isystem /opt/homebrew/lib/wx/include/osx_cocoa-unicode-3.2 -isystem /opt/homebrew/include/wx-3.2
+  OBJECT_DIR = CMakeFiles/CircuitWave.dir
+  OBJECT_FILE_DIR = CMakeFiles/CircuitWave.dir/Src
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target CircuitWave
@@ -171,7 +171,7 @@ build CMakeFiles/CircuitWave.dir/Src/GraphRenderer.cpp.o: CXX_COMPILER__CircuitW
 #############################################
 # Link the executable CircuitWave.app/Contents/MacOS/CircuitWave
 
-build CircuitWave.app/Contents/MacOS/CircuitWave: CXX_EXECUTABLE_LINKER__CircuitWave_Debug CMakeFiles/CircuitWave.dir/Src/main.cpp.o CMakeFiles/CircuitWave.dir/Src/TabRCfilter.cpp.o CMakeFiles/CircuitWave.dir/Src/TabRegulator.cpp.o CMakeFiles/CircuitWave.dir/Src/TabOpamp.cpp.o CMakeFiles/CircuitWave.dir/Src/LowpassRC.cpp.o CMakeFiles/CircuitWave.dir/Src/imageProcessor.cpp.o CMakeFiles/CircuitWave.dir/Src/TL431.cpp.o CMakeFiles/CircuitWave.dir/Src/CircuitComponent.cpp.o CMakeFiles/CircuitWave.dir/Src/LM317.cpp.o CMakeFiles/CircuitWave.dir/Src/InvOpamp.cpp.o CMakeFiles/CircuitWave.dir/Src/NonInvOpamp.cpp.o CMakeFiles/CircuitWave.dir/Src/textManipulations.cpp.o CMakeFiles/CircuitWave.dir/Src/TabBase.cpp.o CMakeFiles/CircuitWave.dir/Src/GraphRenderer.cpp.o
+build CircuitWave.app/Contents/MacOS/CircuitWave: CXX_EXECUTABLE_LINKER__CircuitWave_Debug CMakeFiles/CircuitWave.dir/Src/app.cpp.o CMakeFiles/CircuitWave.dir/Src/TabRCfilter.cpp.o CMakeFiles/CircuitWave.dir/Src/TabRegulator.cpp.o CMakeFiles/CircuitWave.dir/Src/TabOpamp.cpp.o CMakeFiles/CircuitWave.dir/Src/LowpassRC.cpp.o CMakeFiles/CircuitWave.dir/Src/ImageProcessor.cpp.o CMakeFiles/CircuitWave.dir/Src/TL431.cpp.o CMakeFiles/CircuitWave.dir/Src/LM317.cpp.o CMakeFiles/CircuitWave.dir/Src/InvOpamp.cpp.o CMakeFiles/CircuitWave.dir/Src/NonInvOpamp.cpp.o CMakeFiles/CircuitWave.dir/Src/TextManipulator.cpp.o CMakeFiles/CircuitWave.dir/Src/TabTools.cpp.o CMakeFiles/CircuitWave.dir/Src/GraphRenderer.cpp.o CMakeFiles/CircuitWave.dir/Src/ExceptionHandler.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk
   LINK_LIBRARIES = -Wl,-rpath,/opt/homebrew/lib  -L/opt/homebrew/lib  -framework IOKit  -framework Carbon  -framework Cocoa  -framework QuartzCore  -framework AudioToolbox  -framework System  -framework OpenGL  -lwx_osx_cocoau_core-3.2  -lwx_baseu-3.2
   LINK_PATH = -L/opt/homebrew/lib

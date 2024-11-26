@@ -3,10 +3,19 @@
 
 #include "CircuitComponent.h"
 
+/**
+ * @brief Abstract base class for voltage regulators.
+ * This class provides common functionality for calculating output
+ * voltage and fetching regulator data.
+ */
 class Regulator : public CircuitComponent {
+protected:
+    double outputVoltage{};
+
 public:
-    double R1{}, R2{}, outputVoltage{};
     ~Regulator() override = default;
+    [[nodiscard]] virtual wxString GetData() const = 0;
+    [[nodiscard]] double getVoltage() const { return outputVoltage; };
 
 };
 

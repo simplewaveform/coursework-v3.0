@@ -6,21 +6,23 @@
 #include <wx/textctrl.h>
 #include <vector>
 #include "../Inc/LowpassRC.h"
+#include "../Inc/BaseTab.h"
 
-class TabRCfilter : public wxPanel {
+class TabRCfilter : public BaseTab {
+
+wxDECLARE_EVENT_TABLE();
+
 public:
     explicit TabRCfilter(wxNotebook *parent);
-    static wxString GetData(LowpassRC &filter) ;
+    wxString GetData() const override;
 
 private:
-    void InitializeEmptyGraph();
+    LowpassRC filter;
     void OnCalculate(wxCommandEvent &event);
     void OnPaint(wxPaintEvent &event);
     wxTextCtrl *inputR1, *inputC1;
     wxStaticText *resultCutoff, *resultTimeConstant;
     std::vector<double> timeValues, responseValues;
-
-wxDECLARE_EVENT_TABLE();
 
 };
 

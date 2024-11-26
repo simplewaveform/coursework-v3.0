@@ -3,11 +3,20 @@
 
 #include "../Inc/Regulator.h"
 
+/**
+ * @brief LM317 voltage regulator class.
+ * This class calculates the output voltage based on the resistor values
+ * and provides the regulator data as a string.
+ */
 class LM317 : public Regulator {
+private:
+    double R1{}, R2{};
 
 public:
-    explicit LM317();
+    void setR1(double r1) { this->R1 = r1; }
+    void setR2(double r2) { this->R2 = r2; }
     void calculateParameters() override;
+    [[nodiscard]] wxString GetData() const override;
 
 };
 
