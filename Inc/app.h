@@ -1,6 +1,5 @@
 #ifndef CIRCUITWAVE_APP_H
 #define CIRCUITWAVE_APP_H
-
 /**
  * @brief Main application class.
  * Initializes the application, creates the main frame, and sets up event handling.
