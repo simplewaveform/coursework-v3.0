@@ -1,12 +1,11 @@
 #include "../Inc/ExceptionHandler.h"
-#include <fstream>
 
 /**
  * @brief Handles an exception and displays an error dialog.
  * @param e Exception details.
  * @param context Additional context about the error.
  */
-void ExceptionHandler::HandleException(const std::exception& e, const wxString& context) {
+void ExceptionHandler::handleException(const std::exception& e, const wxString& context) {
 
     ShowErrorDialog(e, context);
 
@@ -21,4 +20,5 @@ void ExceptionHandler::ShowErrorDialog(const std::exception& e, const wxString& 
 
     wxMessageBox(wxString::Format("%s: %s", context, e.what()),
                  "Error", wxICON_ERROR);
+
 }

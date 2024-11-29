@@ -16,8 +16,6 @@ public:
     void setRin(double rin) { this->Rin = rin; }
     [[nodiscard]] double getRfb() const { return Rfb; };
     [[nodiscard]] double getRin() const { return Rin; };
-    explicit InvertingOpamp() = default;
-    ~InvertingOpamp() override = default;
     void calculateParameters() override;
 
 };

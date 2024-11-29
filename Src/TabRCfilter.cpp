@@ -21,16 +21,16 @@ TabRCfilter::TabRCfilter(wxNotebook *parent) : BaseTab(parent) {
 
     auto *sizer = new wxBoxSizer(wxVERTICAL);
     auto *gridSizer = new wxFlexGridSizer(5, 2, 20, 50);
-    inputR1 = TabTools::CreateInputField(this, gridSizer, "R1 (Ω):");
-    inputC1 = TabTools::CreateInputField(this, gridSizer, "C1 (μF):");
-    TabTools::CreateButton(this, gridSizer, "Calculate parameters",
+    inputR1 = TabTools::createInputField(this, gridSizer, "R1 (Ω):");
+    inputC1 = TabTools::createInputField(this, gridSizer, "C1 (μF):");
+    TabTools::createButton(this, gridSizer, "Calculate parameters",
                            this, &TabRCfilter::OnCalculate);
 
     resultCutoff = new wxStaticText(this, wxID_ANY, "Cutoff frequency:");
     resultTimeConstant = new wxStaticText(this, wxID_ANY, "Time constant:");
-    TabTools::AddEmptyCell(this, gridSizer, 1);
+    TabTools::addEmptyCell(this, gridSizer, 1);
     gridSizer->Add(resultCutoff);
-    TabTools::AddEmptyCell(this, gridSizer, 1);
+    TabTools::addEmptyCell(this, gridSizer, 1);
     gridSizer->Add(resultTimeConstant);
 
     auto *imageCtrl = new wxStaticBitmap(this, wxID_ANY, ImageProcessor::processImage(
@@ -41,7 +41,7 @@ TabRCfilter::TabRCfilter(wxNotebook *parent) : BaseTab(parent) {
     SetSizer(sizer);
 
     TextManipulator manipulator;
-    manipulator.loadHelpText("../Resources/help.txt");
+    manipulator.loadText("../Resources/help.txt");
     manipulator.transformText(this, filterTextOffsetX, filterTextOffsetY);
 
 }
@@ -57,13 +57,17 @@ void TabRCfilter::OnCalculate(wxCommandEvent &) {
         filter.calculateParameters();
         resultCutoff->SetLabel(wxString::Format("Cutoff frequency : %.2lf Hz", filter.getFrequency()));
         resultTimeConstant->SetLabel(wxString::Format("Time constant: %.2lf μs", filter.getTime()));
+    } catch (const std::invalid_argument& e) {
+        ExceptionHandler::handleException(e, "Incorrect input data for RC filter");
     } catch (const std::exception& e) {
-        ExceptionHandler::HandleException(e, "Error calculating RC filter parameters");
+        ExceptionHandler::handleException(e, "RC filter calculation error");
+    } catch (...) {
+        wxLogError("Unknown error");
     }
 
     timeValues.clear();
     responseValues.clear();
-    for (int t = 0; t <= 5 * filter.getTime(); t += 1) {
+    for (int t = 0; t <= graphScaleFactor * filter.getTime(); t += 1) {
         timeValues.push_back(t);
         responseValues.push_back(1.0 - exp(-t / filter.getTime()));
     }
@@ -85,7 +89,7 @@ void TabRCfilter::OnPaint(wxPaintEvent &) {
  * @brief Retrieves RC filter parameters as a formatted string.
  * @return String containing R, C, cutoff frequency, and time constant.
  */
-wxString TabRCfilter::GetData() const {
+wxString TabRCfilter::getData() const {
 
     return wxString::Format(
             "RC Filter parameters:\n"

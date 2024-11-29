@@ -14,6 +14,8 @@
  */
 class TabOpamp : public BaseTab {
 private:
+    template <typename T>
+    void updateOpamp(wxTextCtrl* inputRfb, wxTextCtrl* inputRgOrRin, wxStaticText* resultGain, T& opamp);
     wxTextCtrl *inputRfbNonInv, *inputRgNonInv, *inputRfbInv, *inputRinInv;
     wxStaticText *resultGainNonInv, *resultGainInv;
     wxButton *calculateButtonNonInv{}, *calculateButtonInv{};
@@ -23,10 +25,8 @@ public:
     NonInvertingOpamp nonInvertingOpamp;
     explicit TabOpamp(wxNotebook* parent);
     void OnCalculate(wxCommandEvent& event);
-    wxString GetData() const override;
-    template <typename T>
-    static void CalculateOpampGain(wxTextCtrl* inputRfb, wxTextCtrl* inputRin, wxStaticText* resultGain);
+    wxString getData() const override;
 
 };
 
-#endif
+#endif //TABOPAMP_H

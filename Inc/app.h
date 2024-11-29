@@ -19,7 +19,7 @@ class MyFrame : public wxFrame {
 public:
     explicit MyFrame(const wxString& title);
     void OnSaveData(wxCommandEvent&);
-    wxString GetDataFromActiveTab();
+    wxString getDataFromActiveTab();
 
 private:
     wxNotebook* notebook;

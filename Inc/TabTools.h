@@ -11,20 +11,19 @@
  */
 class TabTools : public wxPanel {
 public:
-    static wxTextCtrl *CreateInputField(wxWindow *parent, wxFlexGridSizer *sizer, const wxString &labelText);
-    static void AddEmptyCell(wxWindow *parent, wxFlexGridSizer *sizer, int count);
+    static wxTextCtrl *createInputField(wxWindow *parent, wxFlexGridSizer *sizer, const wxString &labelText);
+    static void addEmptyCell(wxWindow *parent, wxFlexGridSizer *sizer, int count);
 
     template<typename T>
-    static wxButton *CreateButton(wxWindow *parent, wxFlexGridSizer *sizer, const wxString &labelText, T *handler,
+    static wxButton *createButton(wxWindow *parent, wxFlexGridSizer *sizer, const wxString &labelText, T *handler,
                                   void (T::*eventHandler)(wxCommandEvent &)) {
-
         try {
             auto *button = new wxButton(parent, wxID_ANY, labelText);
             button->Bind(wxEVT_BUTTON, eventHandler, handler);
             sizer->Add(button, 0, wxALIGN_CENTER_HORIZONTAL | wxALL, 10);
             return button;
         } catch (const std::exception &e) {
-            ExceptionHandler::HandleException(e, "Error creating button");
+            ExceptionHandler::handleException(e, "Error creating button");
             return nullptr;
         }
     }

@@ -14,9 +14,9 @@ void TL431::calculateParameters() {
  * @brief Retrieves the TL431 regulator's parameters as a formatted string.
  * @return A string with R1, R2, and output voltage details.
  */
-wxString TL431::GetData() const {
+wxString TL431::getData() const {
 
-    return wxString::Format("TL431 parameters:\nR1: %.2f Ω\nR2: %.2f Ω\nVoltage: %.2f V",
+    return wxString::Format("TL431 parameters:\nR1: %.2lf Ω\nR2: %.2lf Ω\nVoltage: %.2lf V",
                             R1, R2, outputVoltage);
 
 }

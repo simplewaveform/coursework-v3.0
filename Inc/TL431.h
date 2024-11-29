@@ -18,7 +18,7 @@ public:
     [[nodiscard]] double getR1() const { return R1; };
     [[nodiscard]] double getR2() const { return R2; };
     void calculateParameters() override;
-    [[nodiscard]] wxString GetData() const override;
+    [[nodiscard]] wxString getData() const override;
 
 };
 

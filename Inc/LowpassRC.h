@@ -4,8 +4,8 @@
 #include "../Inc/Filter.h"
 
 /**
- * @brief Low-pass RC filter class.
- * Calculates the cutoff frequency and time constant for an RC low-pass filter.
+ * @brief Lowpass RC filter class.
+ * Calculates the cutoff frequency and time constant for an RC lowpass filter.
  */
 class LowpassRC : public Filter {
 private:

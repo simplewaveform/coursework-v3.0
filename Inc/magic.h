@@ -3,24 +3,26 @@
 
 /**
  * @brief Magic numbers like constraints for positioning
- * GUI elements (buttons, input fields, text fields etc.).
+ *        GUI elements (buttons, input fields, text fields etc.).
  */
 
 /**
  * @brief BLOCK 1 - TABRCFILTER constants for GUI.
  */
 const int filterImageX = 350, filterImageY = 30;            // positioning image
-const int filterImageW = 470, filterImageH = 200;           // scaling image
+const int filterImageW = 490, filterImageH = 200;           // scaling image
 const int graphStartX = 390, graphStartY = 490;             // positioning graph
 const int graphWidth = 400, graphHeight = 210;              // scaling graph
 const int numMarks = 10;                                    // number of marks for graph (x-axis)
 const int filterTextOffsetX = 10, filterTextOffsetY = 290;  // offsets (x, y) for help text
+const int graphScaleFactor = 5;                             // graph scaling magic number for better look
 
 /**
  * @brief BLOCK 2 - TABREGULATOR constants for GUI.
  */
-const int regulatorImageX = 400, regulatorImageY = 50;      // positioning image
-const int regulatorImageW = 400, regulatorImageH = 250;     // scaling image
+const int regulatorImageX = 400, regulatorImageY = 50;              // positioning image
+const int regulatorImageW = 400, regulatorImageH = 250;             // scaling image
+const int regulatorTextOffsetX = 20, regulatorTextOffsetY = 350;    // offsets (x, y) for info text
 
 /**
  * @brief BLOCK 3 - TABOPAMP constants for GUI.

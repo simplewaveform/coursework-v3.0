@@ -14,9 +14,9 @@ void LM317::calculateParameters() {
  * @brief Retrieves the LM317 regulator's parameters as a formatted string.
  * @return A string with R1, R2, and output voltage details.
  */
-wxString LM317::GetData() const {
+wxString LM317::getData() const {
 
-    return wxString::Format("LM317 parameters:\nR1: %.2f Ω\nR2: %.2f Ω\nVoltage: %.2f V",
+    return wxString::Format("LM317 parameters:\nR1: %.2lf Ω\nR2: %.2lf Ω\nVoltage: %.2lf V",
                             R1, R2, outputVoltage);
 
 }

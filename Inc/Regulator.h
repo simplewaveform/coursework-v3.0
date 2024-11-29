@@ -13,8 +13,7 @@ protected:
     double outputVoltage{};
 
 public:
-    ~Regulator() override = default;
-    [[nodiscard]] virtual wxString GetData() const = 0;
+    [[nodiscard]] virtual wxString getData() const = 0;
     [[nodiscard]] double getVoltage() const { return outputVoltage; };
 
 };

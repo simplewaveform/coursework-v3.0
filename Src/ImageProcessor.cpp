@@ -1,4 +1,5 @@
 #include "../Inc/ImageProcessor.h"
+#include "../Inc/ExceptionHandler.h"
 
 /**
  * @brief Processes and inverts the colors of an image, then scales it.
@@ -11,22 +12,23 @@
  */
 wxBitmap ImageProcessor::processImage(const wxString& filePath, int width, int height) {
 
-    wxImage image(filePath, wxBITMAP_TYPE_ANY);
-    if (!image.IsOk()) {
-        wxLogError("Failed to load image");
-        return image;
+    try {
+        wxImage image(filePath, wxBITMAP_TYPE_ANY);
+        if (!image.IsOk()) throw std::runtime_error(wxString::Format("Failed to load image: %s",
+                                                                     filePath).ToStdString());
+        if (width > 0 && height > 0) image = image.Scale(width, height, wxIMAGE_QUALITY_HIGH);
+
+        unsigned char* data = image.GetData();
+        if (!data) throw std::runtime_error("Image data is invalid or corrupted.");
+
+        for (int i = 0; i < image.GetWidth() * image.GetHeight() * 3; ++i) {
+            data[i] = 255 - data[i];
+        }
+
+        return {image};
+    } catch (const std::exception& e) {
+        ExceptionHandler::handleException(e, "Error processing image");
+        return {};
     }
 
-    if (width > 0 && height > 0) {
-        image = image.Scale(width, height, wxIMAGE_QUALITY_HIGH);
-    }
-
-    unsigned char* data = image.GetData();
-    int size = image.GetWidth() * image.GetHeight() * 3;
-
-    for (int i = 0; i < size; i++) {
-        data[i] = 255 - data[i];
-    }
-
-    return image;
 }

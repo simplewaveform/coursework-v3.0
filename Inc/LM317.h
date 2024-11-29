@@ -16,7 +16,7 @@ public:
     void setR1(double r1) { this->R1 = r1; }
     void setR2(double r2) { this->R2 = r2; }
     void calculateParameters() override;
-    [[nodiscard]] wxString GetData() const override;
+    [[nodiscard]] wxString getData() const override;
 
 };
 

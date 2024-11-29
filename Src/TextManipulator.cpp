@@ -1,4 +1,5 @@
 #include "../Inc/TextManipulator.h"
+#include "../Inc/ExceptionHandler.h"
 #include <fstream>
 #include <iterator>
 
@@ -6,21 +7,19 @@
  * @brief Loads help text from a file.
  * @param filename Path to the file containing help text.
  */
-void TextManipulator::loadHelpText(const wxString& filename) {
+void TextManipulator::loadText(const wxString& filename) {
 
     try {
         std::ifstream file(filename.ToStdString(), std::ios::in | std::ios::binary);
         if (!file.is_open()) {
-            wxLogError("Failed to open file: %s", filename);
-            return;
+            throw std::runtime_error(wxString::Format("Failed to open file: %s", filename).ToStdString());
         }
         text.clear();
         std::string content((std::istreambuf_iterator<char>(file)), std::istreambuf_iterator<char>());
         file.close();
         text = wxString::FromUTF8(content.c_str());
-        if (text.IsEmpty()) wxLogWarning("Loaded text is empty or invalid UTF-8: %s", filename);
-    } catch (const std::exception& ex) {
-        wxLogError("Exception occurred while reading file: %s. Error: %s", filename, ex.what());
+    } catch (const std::exception& e) {
+        ExceptionHandler::handleException(e, "Error loading help text");
     }
 
 }
@@ -34,26 +33,16 @@ void TextManipulator::loadHelpText(const wxString& filename) {
 bool TextManipulator::saveDataToFile(const wxString& filePath, const wxString& data) {
 
     try {
-        if (data.IsEmpty()) {
-            wxLogWarning("Data to save is empty. File: %s", filePath);
-            return false;
-        }
-
+        if (data.IsEmpty()) throw std::invalid_argument("No data provided for saving.");
         std::ofstream file(filePath.ToStdString(), std::ios::out | std::ios::binary | std::ios::trunc);
-        if (!file.is_open()) {
-            wxLogError("Failed to open file for writing: %s", filePath);
-            return false;
-        }
+        if (!file.is_open()) throw std::runtime_error(wxString::Format("Failed to open file for writing: %s",
+                                                                       filePath).ToStdString());
         auto utf8Data = data.ToUTF8();
         file.write(utf8Data.data(), static_cast<std::streamsize>(utf8Data.length()));
-        if (!file.good()) {
-            wxLogError("Error occurred while writing to the file: %s", filePath);
-            return false;
-        }
-        file.close();
+        if (!file.good()) throw std::runtime_error("Error occurred while writing to the file.");
         return true;
     } catch (const std::exception& e) {
-        wxLogError("Exception occurred while saving to file: %s. Error: %s", filePath, e.what());
+        ExceptionHandler::handleException(e, "Error saving data to file");
         return false;
     }
 

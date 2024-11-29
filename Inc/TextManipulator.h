@@ -3,7 +3,6 @@
 
 #include <wx/wx.h>
 #include <fstream>
-#include <wx/textfile.h>
 
 /**
  * @brief Helper class for managing text in the tabs.
@@ -14,7 +13,7 @@ private:
     wxString text;
 
 public:
-    void loadHelpText(const wxString &filename);
+    void loadText(const wxString &filename);
     void transformText(wxWindow *parent, int textOffsetX, int textOffsetY);
     static bool saveDataToFile(const wxString& filePath, const wxString& data);
 

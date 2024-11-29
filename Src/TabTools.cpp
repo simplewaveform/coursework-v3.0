@@ -7,7 +7,7 @@
  * @param labelText Label text for the input field.
  * @return Pointer to the created text control.
  */
-wxTextCtrl* TabTools::CreateInputField(wxWindow* parent, wxFlexGridSizer* sizer, const wxString& labelText) {
+wxTextCtrl* TabTools::createInputField(wxWindow* parent, wxFlexGridSizer* sizer, const wxString& labelText) {
 
     auto* label = new wxStaticText(parent, wxID_ANY, labelText);
     auto* input = new wxTextCtrl(parent, wxID_ANY);
@@ -23,10 +23,10 @@ wxTextCtrl* TabTools::CreateInputField(wxWindow* parent, wxFlexGridSizer* sizer,
  * @param sizer Layout manager where cells are added.
  * @param count Number of empty cells to add.
  */
-void TabTools::AddEmptyCell(wxWindow* parent, wxFlexGridSizer* sizer, int count) {
+void TabTools::addEmptyCell(wxWindow* parent, wxFlexGridSizer* sizer, int count) {
 
     for (int i = 0; i < count; ++i) {
-        sizer->Add(new wxStaticText(parent, wxID_ANY, ""), 0, wxEXPAND);
+        sizer->Add(new wxStaticText(parent, wxID_ANY, ""));
     }
 
 }

@@ -4,6 +4,7 @@
 #include "../Inc/ImageProcessor.h"
 #include "../Inc/TabTools.h"
 #include "../Inc/magic.h"
+#include "../Inc/TextManipulator.h"
 
 /**
  * @brief Constructor for the TabRegulator class.
@@ -26,24 +27,29 @@ TabRegulator::TabRegulator(wxNotebook* parent) : BaseTab(parent) {
     currentRegulator = std::make_unique<LM317>();
     regulatorChoice->SetSelection(0);
 
-    inputR1 = TabTools::CreateInputField(this, gridSizer, "R1 (Ω):");
-    inputR2 = TabTools::CreateInputField(this, gridSizer, "R2 (Ω):");
-    TabTools::CreateButton(this, gridSizer, "Calculate voltage", this, &TabRegulator::OnCalculate);
-
+    inputR1 = TabTools::createInputField(this, gridSizer, "R1 (Ω):");
+    inputR2 = TabTools::createInputField(this, gridSizer, "R2 (Ω):");
+    TabTools::createButton(this, gridSizer, "Calculate voltage", this,
+                           &TabRegulator::OnCalculate);
     outputVoltage = new wxStaticText(this, wxID_ANY, "Output voltage:");
-    TabTools::AddEmptyCell(this, gridSizer, 1);
+    TabTools::addEmptyCell(this, gridSizer, 1);
     gridSizer->Add(outputVoltage);
 
     regulatorChoice->Bind(wxEVT_CHOICE, &TabRegulator::OnRegulatorChoice, this);
 
-    wxBitmap processedBitmap = ImageProcessor::processImage("../Resources/LM317.png", regulatorImageW, regulatorImageH);
+    wxBitmap processedBitmap = ImageProcessor::processImage("../Resources/LM317.png",
+                                                            regulatorImageW, regulatorImageH);
     imageCtrl = new wxStaticBitmap(this, wxID_ANY, processedBitmap);
     imageCtrl->Move(regulatorImageX, regulatorImageY);
+
+    TextManipulator manipulator;
+    manipulator.loadText("../Resources/info.txt");
+    manipulator.transformText(this, regulatorTextOffsetX, regulatorTextOffsetY);
 
     sizer->Add(gridSizer, 1, wxALL | wxEXPAND, 10);
     SetSizer(sizer);
 
-    UpdateRegulatorImage(regulatorChoice->GetStringSelection());
+    updateRegulatorImage(regulatorChoice->GetStringSelection());
 
 }
 
@@ -51,23 +57,31 @@ TabRegulator::TabRegulator(wxNotebook* parent) : BaseTab(parent) {
  * @brief Handles regulator type selection.
  */
 void TabRegulator::OnRegulatorChoice(wxCommandEvent&) {
-
-    wxString regulatorType = regulatorChoice->GetStringSelection();
-    currentRegulator.reset();
-    if (regulatorType == "LM317") currentRegulator = std::make_unique<LM317>();
-    else if (regulatorType == "TL431") currentRegulator = std::make_unique<TL431>();
-    UpdateRegulatorImage(regulatorType);
-
+    try {
+        wxString regulatorType = regulatorChoice->GetStringSelection();
+        currentRegulator.reset();
+        if (regulatorType == "LM317") {
+            currentRegulator = std::make_unique<LM317>();
+        } else if (regulatorType == "TL431") {
+            currentRegulator = std::make_unique<TL431>();
+        } else {
+            throw std::runtime_error("Invalid regulator type selected");
+        }
+        updateRegulatorImage(regulatorType);
+    } catch (const std::exception& e) {
+        ExceptionHandler::handleException(e, "Error changing regulator type");
+    }
 }
 
 /**
  * @brief Updates the displayed regulator image based on the selection.
  * @param regulatorType Selected regulator type.
  */
-void TabRegulator::UpdateRegulatorImage(const wxString& regulatorType) {
+void TabRegulator::updateRegulatorImage(const wxString& regulatorType) {
 
     wxString imagePath = wxString::Format("../Resources/%s.png", regulatorType);
-    imageCtrl->SetBitmap(ImageProcessor::processImage(imagePath, regulatorImageW, regulatorImageH));
+    imageCtrl->SetBitmap(ImageProcessor::processImage(imagePath, regulatorImageW,
+                                                      regulatorImageH));
     Layout();
 
 }
@@ -80,28 +94,32 @@ void TabRegulator::OnCalculate(wxCommandEvent&) {
     if (!currentRegulator) return;
     try {
         if (auto lm317Regulator = dynamic_cast<LM317*>(currentRegulator.get())) {
-            CircuitComponent::CheckAndSetParameter(*lm317Regulator, &LM317::setR1, inputR1->GetValue());
-            CircuitComponent::CheckAndSetParameter(*lm317Regulator, &LM317::setR2, inputR2->GetValue());
+            CircuitComponent::CheckAndSetParameter(*lm317Regulator, &LM317::setR1,
+                                                   inputR1->GetValue());
+            CircuitComponent::CheckAndSetParameter(*lm317Regulator, &LM317::setR2,
+                                                   inputR2->GetValue());
         } else if (auto tl431Regulator = dynamic_cast<TL431*>(currentRegulator.get())) {
-            CircuitComponent::CheckAndSetParameter(*tl431Regulator, &TL431::setR1, inputR1->GetValue());
-            CircuitComponent::CheckAndSetParameter(*tl431Regulator, &TL431::setR2, inputR2->GetValue());
+            CircuitComponent::CheckAndSetParameter(*tl431Regulator, &TL431::setR1,
+                                                   inputR1->GetValue());
+            CircuitComponent::CheckAndSetParameter(*tl431Regulator, &TL431::setR2,
+                                                   inputR2->GetValue());
         }
     } catch (const std::exception& e) {
-        ExceptionHandler::HandleException(e, "Error calculating regulator parameters");
+        ExceptionHandler::handleException(e, "Error calculating regulator parameters");
         return;
     }
     currentRegulator->calculateParameters();
-    outputVoltage->SetLabel(wxString::Format("Output voltage: %.2lf V", currentRegulator->getVoltage()));
-
+    outputVoltage->SetLabel(wxString::Format("Output voltage: %.2lf V",
+                                             currentRegulator->getVoltage()));
 }
 
 /**
  * @brief Retrieves the parameters of the selected regulator as a formatted string.
  * @return String containing regulator data or a message if none is selected.
  */
-wxString TabRegulator::GetData() const {
+wxString TabRegulator::getData() const {
 
     if (!currentRegulator) return "No regulator selected.";
-    return currentRegulator->GetData();
+    return currentRegulator->getData();
 
 }

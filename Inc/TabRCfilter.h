@@ -3,7 +3,6 @@
 
 #include <wx/wx.h>
 #include <wx/notebook.h>
-#include <wx/textctrl.h>
 #include <vector>
 #include "../Inc/LowpassRC.h"
 #include "../Inc/BaseTab.h"
@@ -14,7 +13,7 @@ wxDECLARE_EVENT_TABLE();
 
 public:
     explicit TabRCfilter(wxNotebook *parent);
-    wxString GetData() const override;
+    wxString getData() const override;
 
 private:
     LowpassRC filter;
@@ -26,4 +25,4 @@ private:
 
 };
 
-#endif
+#endif //TABRCFILTER_H

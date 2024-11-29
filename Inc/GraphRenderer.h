@@ -1,12 +1,11 @@
 #ifndef CIRCUITWAVE_GRAPHRENDERER_H
 #define CIRCUITWAVE_GRAPHRENDERER_H
 
-#include <wx/dc.h>
+#include <wx/wx.h>
 #include <vector>
-#include <wx/string.h>
 
 /**
- * @brief Responsible for rendering graphs on the screen.
+ * @brief Responsible for rendering graph on the screen.
  * This class handles the drawing of graphs based on given data points,
  * including drawing axes, labels, and graph lines.
  */

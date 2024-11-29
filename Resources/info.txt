@@ -1,0 +1,9 @@
+	The TL431 and LM317 are versatile voltage regulation components commonly used in electronic circuits. 
+ 
+	The TL431 is a programmable shunt voltage reference that provides a precise adjustable output between 2.5V and 36V using
+external resistors. It is ideal for feedback circuits, power supplies, and over-voltage protection due to its accuracy and low noise. 
+ 
+
+	The LM317, on the other hand, is an adjustable linear voltage regulator that delivers a stable output voltage from 1.25V to 37V 
+with a current output of up to 1.5A. Known for its simplicity and reliability, it is widely used in power supplies, battery chargers, and 
+other circuits requiring variable voltage.

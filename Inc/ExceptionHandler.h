@@ -2,7 +2,6 @@
 #define CIRCUITWAVE_EXCEPTIONHANDLER_H
 
 #include <exception>
-#include <wx/string.h>
 #include <wx/wx.h>
 
 /**
@@ -12,7 +11,7 @@
  */
 class ExceptionHandler {
 public:
-    static void HandleException(const std::exception& e, const wxString& context);
+    static void handleException(const std::exception& e, const wxString& context);
 
 private:
     static void ShowErrorDialog(const std::exception& e, const wxString& context);

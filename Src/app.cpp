@@ -19,7 +19,7 @@ bool MyApp::OnInit() {
         frame->Show(true);
         return true;
     } catch (const std::exception& e) {
-        ExceptionHandler::HandleException(e, "Application initialization failed");
+        ExceptionHandler::handleException(e, "Error initializing the application");
         return false;
     }
 
@@ -75,7 +75,7 @@ void MyFrame::OnSaveData(wxCommandEvent&) {
 
     if (saveFileDialog.ShowModal() != wxID_OK) return;
 
-    wxString dataToSave = GetDataFromActiveTab();
+    wxString dataToSave = getDataFromActiveTab();
     if (dataToSave.IsEmpty()) return;
 
     try {
@@ -84,7 +84,7 @@ void MyFrame::OnSaveData(wxCommandEvent&) {
         }
         wxMessageBox("Data is saved successfully.", "Info", wxICON_INFORMATION);
     } catch (const std::exception& e) {
-        ExceptionHandler::HandleException(e, "Error exporting data");
+        ExceptionHandler::handleException(e, "Error exporting data");
     }
 
 }
@@ -93,9 +93,9 @@ void MyFrame::OnSaveData(wxCommandEvent&) {
  * @brief Retrieves data from the currently active tab.
  * @return A string containing the tab's data.
  */
-wxString MyFrame::GetDataFromActiveTab() {
+wxString MyFrame::getDataFromActiveTab() {
 
     auto* activeTabPtr = dynamic_cast<BaseTab*>(notebook->GetPage(notebook->GetSelection()));
-    return activeTabPtr ? activeTabPtr->GetData() : "";
+    return activeTabPtr ? activeTabPtr->getData() : "";
 
 }

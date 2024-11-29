@@ -15,13 +15,13 @@
 class TabRegulator : public BaseTab {
 public:
     std::unique_ptr<Regulator> currentRegulator;
-    wxString GetData() const override;
+    wxString getData() const override;
     explicit TabRegulator(wxNotebook* parent);
     void OnCalculate(wxCommandEvent& event);
 
 private:
     void OnRegulatorChoice(wxCommandEvent& event);
-    void UpdateRegulatorImage(const wxString& regulatorType);
+    void updateRegulatorImage(const wxString& regulatorType);
     wxChoice *regulatorChoice;
     wxTextCtrl *inputR1, *inputR2;
     wxStaticText *outputVoltage;

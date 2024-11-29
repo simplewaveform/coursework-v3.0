@@ -62,7 +62,7 @@ void GraphRenderer::DrawXAxisLabels(wxDC &dc, double minX, double maxX, double x
     for (int i = 0; i <= numMarks; ++i) {
         double value = (minX + i * (maxX - minX) / numMarks) / xScale;
         int x = graphStartX + static_cast<int>(i * (graphWidth / numMarks));
-        wxString label = wxString::Format("%.1f%s", value / 5, unit);
+        wxString label = wxString::Format("%.1f%s", value / graphScaleFactor, unit);
         dc.DrawText(label, x - 10, graphStartY + 5);
     }
 
@@ -116,7 +116,7 @@ void GraphRenderer::InitializeEmptyGraph(std::vector<double>& xValues, std::vect
 
     xValues.clear();
     yValues.clear();
-    for (int t = 0; t <= 5; t += 5) {
+    for (int t = 0; t <= graphScaleFactor; t += graphScaleFactor) {
         xValues.push_back(t);
         yValues.push_back(0.0);
     }

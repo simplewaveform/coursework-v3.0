@@ -1,9 +1,8 @@
 #ifndef CIRCUITWAVE_CIRCUITCOMPONENT_H
 #define CIRCUITWAVE_CIRCUITCOMPONENT_H
 
-#include <type_traits>
 #include <wx/wx.h>
-#include "ExceptionHandler.h"
+#include "../Inc/ExceptionHandler.h"
 
 /**
  * @brief Abstract base class for all circuit components.
@@ -14,6 +13,7 @@ class CircuitComponent {
 public:
     virtual void calculateParameters() = 0;
     virtual ~CircuitComponent() = default;
+
     /**
      * @brief Checks and sets a parameter for the given object.
      * Validates the input value and sets the parameter using the provided setter.
@@ -23,15 +23,16 @@ public:
      * @param value The value to set.
      */
     template <typename Object, typename Setter>
-    static void CheckAndSetParameter(Object& obj, Setter setter, const wxString& value) {
-        double temp;
+    static bool CheckAndSetParameter(Object& obj, Setter setter, const wxString& value) {
         try {
+            double temp;
             if (!value.ToDouble(&temp)) throw std::invalid_argument("Failed to convert input to a number");
             if (temp <= 0) throw std::invalid_argument("Value must be positive");
             (obj.*setter)(temp);
+            return true;
         } catch (const std::exception& e) {
-            ExceptionHandler::HandleException(e, "Error setting parameter");
-            throw;
+            ExceptionHandler::handleException(e, "Invalid parameter setting");
+            return false;
         }
     }
 
