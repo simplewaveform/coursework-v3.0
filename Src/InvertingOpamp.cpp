@@ -1,4 +1,4 @@
-#include "../Inc/InvOpamp.h"
+#include "../Inc/InvertingOpamp.h"
 
 /**
  * @brief Calculates the gain of an inverting operational amplifier.

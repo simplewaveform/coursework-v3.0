@@ -3,8 +3,8 @@
 
 #include <wx/wx.h>
 #include <wx/notebook.h>
-#include "../Inc/InvOpamp.h"
-#include "../Inc/NonInvOpamp.h"
+#include "../Inc/InvertingOpamp.h"
+#include "../Inc/NonInvertingOpamp.h"
 #include "../Inc/BaseTab.h"
 
 /**

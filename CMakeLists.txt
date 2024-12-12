@@ -29,8 +29,8 @@ add_executable(CircuitWave MACOSX_BUNDLE
         Src/ImageProcessor.cpp
         Src/TL431.cpp
         Src/LM317.cpp
-        Src/InvOpamp.cpp
-        Src/NonInvOpamp.cpp
+        Src/InvertingOpamp.cpp
+        Src/NonInvertingOpamp.cpp
         Src/TextManipulator.cpp
         Src/TabTools.cpp
         Src/GraphRenderer.cpp
@@ -48,17 +48,16 @@ add_executable(CircuitWave MACOSX_BUNDLE
         Inc/Regulator.h
         Inc/LM317.h
         Inc/Opamp.h
-        Inc/InvOpamp.h
-        Inc/NonInvOpamp.h
+        Inc/InvertingOpamp.h
+        Inc/NonInvertingOpamp.h
         Inc/TextManipulator.h
         Inc/TabTools.h
         Inc/GraphRenderer.h
         Inc/magic.h
         Inc/ExceptionHandler.h
-
-        ${app_ICON}
         Inc/BaseTab.h
 
+        ${app_ICON}
 )
 
 # Include wxWidgets directories

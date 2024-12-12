@@ -1,0 +1,25 @@
+#!/bin/bash
+
+FOLDER1="/Users/simple_waveform/Documents/programming/3/coursework v3.0/Src"
+FOLDER2="/Users/simple_waveform/Documents/programming/3/coursework v3.0/Inc"
+OUTPUT_FILE="/Users/simple_waveform/Downloads/merged_code.txt"
+
+if [ -f "$OUTPUT_FILE" ]; then
+    rm "$OUTPUT_FILE"
+fi
+
+process_folder() {
+    local folder=$1
+    for file in "$folder"/*; do
+        if [ -f "$file" ]; then
+            echo Файл: "$file" >> "$OUTPUT_FILE"
+            cat "$file" >> "$OUTPUT_FILE"
+            echo -e "\n" >> "$OUTPUT_FILE"
+        fi
+    done
+}
+
+process_folder "$FOLDER1"
+process_folder "$FOLDER2"
+
+echo "Все файлы объединены в $OUTPUT_FILE"
