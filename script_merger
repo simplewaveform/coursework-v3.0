@@ -12,9 +12,11 @@ process_folder() {
     local folder=$1
     for file in "$folder"/*; do
         if [ -f "$file" ]; then
-            echo Файл: "$file" >> "$OUTPUT_FILE"
-            cat "$file" >> "$OUTPUT_FILE"
-            echo -e "\n" >> "$OUTPUT_FILE"
+          {
+            echo Файл: "$file"
+            cat "$file"
+            echo -e "\n"
+          } >> "$OUTPUT_FILE"
         fi
     done
 }
