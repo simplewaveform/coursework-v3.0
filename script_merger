@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 FOLDER1="/Users/simple_waveform/Documents/programming/3/coursework v3.0/Src"
 FOLDER2="/Users/simple_waveform/Documents/programming/3/coursework v3.0/Inc"
